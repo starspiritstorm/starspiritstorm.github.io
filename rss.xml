@@ -7,23 +7,23 @@
 
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>Hugo Theme MemE</title>
+        <title>starspiritstorm</title>
         <link>https://starspiritstorm.github.io/</link>
-        <description>MemE is a powerful and highly customizable GoHugo theme for personal blogs.</description>
+        <description>starspiritstorm personal blogs.</description>
         <generator>Hugo 0.88.1 https://gohugo.io/</generator>
         
             <language>en</language>
         
         
-            <managingEditor>reuixiy@gmail.com (reuixiy)</managingEditor>
+            <managingEditor>starspiritstorm@gmail.com (starspiritstorm)</managingEditor>
         
         
-            <webMaster>reuixiy@gmail.com (reuixiy)</webMaster>
+            <webMaster>starspiritstorm@gmail.com (starspiritstorm)</webMaster>
         
         
             <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</copyright>
         
-        <lastBuildDate>Wed, 13 Oct 2021 08:24:10 &#43;0000</lastBuildDate>
+        <lastBuildDate>Wed, 13 Oct 2021 08:41:33 &#43;0000</lastBuildDate>
         
             <atom:link rel="self" type="application/rss&#43;xml" href="https://starspiritstorm.github.io/rss.xml" />
         
@@ -34,7 +34,7 @@
                 <guid isPermaLink="true">https://starspiritstorm.github.io/posts/auto-post-with-github-action/</guid>
                 <pubDate>Wed, 13 Oct 2021 15:50:47 &#43;0800</pubDate>
                 
-                    <author>reuixiy@gmail.com (reuixiy)</author>
+                    <author>starspiritstorm@gmail.com (starspiritstorm)</author>
                 
                 <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</copyright>
                 
@@ -60,7 +60,7 @@
                 <guid isPermaLink="true">https://starspiritstorm.github.io/posts/hello-world/</guid>
                 <pubDate>Wed, 13 Oct 2021 15:08:25 &#43;0800</pubDate>
                 
-                    <author>reuixiy@gmail.com (reuixiy)</author>
+                    <author>starspiritstorm@gmail.com (starspiritstorm)</author>
                 
                 <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</copyright>
                 
