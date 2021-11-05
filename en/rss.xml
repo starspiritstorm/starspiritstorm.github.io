@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+
+
+
+
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>starspiritstorm</title>
+        <link>https://starspiritstorm.github.io/en/</link>
+        <description>starspiritstorm personal blogs.</description>
+        <generator>Hugo 0.89.0 https://gohugo.io/</generator>
+        
+            <language>en</language>
+        
+        
+            <managingEditor>starspiritstorm@gmail.com (starspiritstorm)</managingEditor>
+        
+        
+            <webMaster>starspiritstorm@gmail.com (starspiritstorm)</webMaster>
+        
+        
+            <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</copyright>
+        
+        <lastBuildDate>Fri, 05 Nov 2021 02:59:19 &#43;0000</lastBuildDate>
+        
+            <atom:link rel="self" type="application/rss&#43;xml" href="https://starspiritstorm.github.io/en/rss.xml" />
+        
+        
+            <item>
+                <title>Post pushed to source code repo and auto published via GitHub Action</title>
+                <link>https://starspiritstorm.github.io/en/posts/auto-post-with-github-action/</link>
+                <guid isPermaLink="true">https://starspiritstorm.github.io/en/posts/auto-post-with-github-action/</guid>
+                <pubDate>Wed, 13 Oct 2021 15:50:47 &#43;0800</pubDate>
+                
+                    <author>starspiritstorm@gmail.com (starspiritstorm)</author>
+                
+                <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</copyright>
+                
+                    <description>&lt;p&gt;This second post was for testing GitHub Action.
+Pushed in source code repo, and auto deploy to the GitHub Pages repo.&lt;/p&gt;
+</description>
+                
+                
+                
+                
+                
+                    
+                        
+                    
+                        
+                    
+                
+            </item>
+        
+            <item>
+                <title>Hello World</title>
+                <link>https://starspiritstorm.github.io/en/posts/hello-world/</link>
+                <guid isPermaLink="true">https://starspiritstorm.github.io/en/posts/hello-world/</guid>
+                <pubDate>Wed, 13 Oct 2021 15:08:25 &#43;0800</pubDate>
+                
+                    <author>starspiritstorm@gmail.com (starspiritstorm)</author>
+                
+                <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</copyright>
+                
+                    <description>&lt;p&gt;My first Hugo post!&lt;/p&gt;
+</description>
+                
+                
+                
+                
+                
+                    
+                        
+                    
+                        
+                    
+                
+            </item>
+        
+    </channel>
+</rss>
