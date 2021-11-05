@@ -10,7 +10,7 @@
         <title>starspiritstorm</title>
         <link>https://starspiritstorm.github.io/</link>
         <description>starspiritstorm personal blogs.</description>
-        <generator>Hugo 0.88.1 https://gohugo.io/</generator>
+        <generator>Hugo 0.89.0 https://gohugo.io/</generator>
         
             <language>en</language>
         
@@ -23,7 +23,7 @@
         
             <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</copyright>
         
-        <lastBuildDate>Tue, 26 Oct 2021 01:35:51 &#43;0000</lastBuildDate>
+        <lastBuildDate>Fri, 05 Nov 2021 02:04:31 &#43;0000</lastBuildDate>
         
             <atom:link rel="self" type="application/rss&#43;xml" href="https://starspiritstorm.github.io/rss.xml" />
         
