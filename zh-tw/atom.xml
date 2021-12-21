@@ -4,7 +4,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh-tw">
     <title type="text">starspiritstorm</title>
     <subtitle type="html">starspiritstorm personal blogs.</subtitle>
-    <updated>2021-12-21T08:47:01&#43;00:00</updated>
+    <updated>2021-12-21T08:50:23&#43;00:00</updated>
     <id>https://starspiritstorm.github.io/zh-tw/</id>
     <link rel="alternate" type="text/html" href="https://starspiritstorm.github.io/zh-tw/" />
     <link rel="self" type="application/atom&#43;xml" href="https://starspiritstorm.github.io/zh-tw/atom.xml" />
@@ -16,6 +16,81 @@
             </author>
     <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</rights>
     <generator uri="https://gohugo.io/" version="0.91.0">Hugo</generator>
+        <entry>
+            <title type="text">在 Windows 環境下安裝 Chocolatey</title>
+            <link rel="alternate" type="text/html" href="https://starspiritstorm.github.io/zh-tw/posts/install-chocolatey-in-windows/" />
+            <id>https://starspiritstorm.github.io/zh-tw/posts/install-chocolatey-in-windows/</id>
+            <updated>2021-12-21T14:53:55&#43;08:00</updated>
+            <published>2021-12-21T14:53:55&#43;08:00</published>
+            <author>
+                    <name>starspiritstorm</name>
+                    <uri>https://starspiritstorm.github.io/zh-tw/</uri>
+                    <email>starspiritstorm@gmail.com</email>
+                    </author>
+            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</rights><summary type="html">&lt;p&gt;為了安裝 Hugo，需要先安裝 Windows 用的套件管理軟體 Chocolatey&lt;/p&gt;
+&lt;p&gt;本篇文章會介紹如何在 Windows 環境下安裝 Chocolatey&lt;/p&gt;……</summary>
+            
+                <content type="html">&lt;p&gt;為了安裝 Hugo，需要先安裝 Windows 用的套件管理軟體 Chocolatey&lt;/p&gt;
+&lt;p&gt;本篇文章會介紹如何在 Windows 環境下安裝 Chocolatey&lt;/p&gt;
+&lt;h2 id=&#34;安裝-chocolatey&#34;&gt;安裝 Chocolatey&lt;/h2&gt;
+&lt;p&gt;首先，要安裝 Chocolatey 就是要去他的官方網站&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://chocolatey.org/&#34;&gt;chocolatey 官方網站&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://chocolatey.org/install&#34;&gt;chocolatey 安裝頁面&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://starspiritstorm.github.io/figures_for_install_chocolately/fig1.Instruction_of_install_chocolately.png&#34; alt=&#34;fig1&#34; title=&#34;Fig1. Chocolatey 的官方網頁安裝步驟&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;安裝步驟-1-用管理者權限開啟-windows-power-shell&#34;&gt;安裝步驟 1. 用&amp;quot;管理者權限&amp;quot;開啟 Windows Power Shell&lt;/h3&gt;
+&lt;p&gt;安裝頁面的指令需要用 Windows Power Shell  執行，Windows Power Shell 記得要用&amp;quot;管理者權限&amp;quot;開啟。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://starspiritstorm.github.io/figures_for_install_chocolately/fig2.start_power_shell_with_admin.png&#34; alt=&#34;fig2&#34; title=&#34;Fig2. 右鍵點選 Windows Power Shell 並用管理者權限開啟 &#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;安裝步驟-2-執行-chocolatey-官網提供的指令&#34;&gt;安裝步驟 2. 執行 Chocolatey 官網提供的指令&lt;/h3&gt;
+&lt;p&gt;根據 Chocolatey 的安裝指示，在安裝 Chocolatey 之前，最好先去 MSDN 確定一下你要的權限 level&lt;/p&gt;
+&lt;p&gt;檢查目前 Power Shell 的設定可以用這行指令&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;Get-ExecutionPolicy -list
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://starspiritstorm.github.io/figures_for_install_chocolately/fig3.check_ExecutionPolicy.png&#34; alt=&#34;fig3&#34; title=&#34;Fig3. 檢查權限&#34;&gt;&lt;/p&gt;
+&lt;p&gt;接下來就跑 &amp;ldquo;run following command&amp;rdquo; 的指令&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://starspiritstorm.github.io/figures_for_install_chocolately/fig4.run_following_command.png&#34; alt=&#34;fig4&#34;&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString(&#39;https://community.chocolatey.org/install.ps1&#39;))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;注意它裡面有寫 Bypass，所以你的 Set-ExecutionPolicy 會被設定成 Bypass，-Scope Process 這段是表示設定只套用於 Process&lt;/p&gt;
+&lt;p&gt;用 AllSigned 會有一堆詢問，看每個人的習慣自行決定要用 Bypass 還是 AllSigned，我比較懶所以就直接用 Bypass 了&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://starspiritstorm.github.io/figures_for_install_chocolately/fig5.Bypass.png&#34; alt=&#34;fig5&#34; title=&#34;Fig5. Bypass&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://starspiritstorm.github.io/figures_for_install_chocolately/fig6.AllSigned.png&#34; alt=&#34;fig6&#34; title=&#34;Fig6. AllSigned&#34;&gt;&lt;/p&gt;
+&lt;p&gt;最後裝完以後就會看到 Chocolatey (choco.exe) is now ready&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://starspiritstorm.github.io/figures_for_install_chocolately/fig7.Chocolately_ready.png&#34; alt=&#34;fig7&#34;&gt;&lt;/p&gt;</content>
+            
+            
+            
+            
+            
+                
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://starspiritstorm.github.io/zh-tw/categories/chocolatey/" term="chocolatey" label="chocolatey" />
+                            
+                        
+                    
+                
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://starspiritstorm.github.io/zh-tw/tags/windows/" term="windows" label="windows" />
+                            
+                        
+                            
+                            
+                            
+                                <category scheme="https://starspiritstorm.github.io/zh-tw/tags/chocolatey/" term="chocolatey" label="chocolatey" />
+                            
+                        
+                    
+                
+            
+        </entry>
+    
         <entry>
             <title type="text">本篇文章是由 GitHub Action 自動推到 GitHub Pages 的測試文章</title>
             <link rel="alternate" type="text/html" href="https://starspiritstorm.github.io/zh-tw/posts/auto-post-with-github-action/" />

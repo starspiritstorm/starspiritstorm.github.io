@@ -2,8 +2,47 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://starspiritstorm.github.io/zh-tw/categories/</loc>
+    <lastmod>2021-12-21T14:53:55+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://starspiritstorm.github.io/en/categories/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-tw"
+                href="https://starspiritstorm.github.io/zh-tw/categories/"
+                />
+  </url><url>
+    <loc>https://starspiritstorm.github.io/zh-tw/tags/chocolatey/</loc>
+    <lastmod>2021-12-21T14:53:55+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://starspiritstorm.github.io/en/tags/chocolatey/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-tw"
+                href="https://starspiritstorm.github.io/zh-tw/tags/chocolatey/"
+                />
+  </url><url>
+    <loc>https://starspiritstorm.github.io/zh-tw/categories/chocolatey/</loc>
+    <lastmod>2021-12-21T14:53:55+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://starspiritstorm.github.io/en/categories/chocolatey/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-tw"
+                href="https://starspiritstorm.github.io/zh-tw/categories/chocolatey/"
+                />
+  </url><url>
     <loc>https://starspiritstorm.github.io/zh-tw/posts/</loc>
-    <lastmod>2021-10-13T15:50:47+08:00</lastmod>
+    <lastmod>2021-12-21T14:53:55+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -16,7 +55,7 @@
                 />
   </url><url>
     <loc>https://starspiritstorm.github.io/zh-tw/</loc>
-    <lastmod>2021-10-13T15:50:47+08:00</lastmod>
+    <lastmod>2021-12-21T14:53:55+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -26,6 +65,45 @@
                 rel="alternate"
                 hreflang="zh-tw"
                 href="https://starspiritstorm.github.io/zh-tw/"
+                />
+  </url><url>
+    <loc>https://starspiritstorm.github.io/zh-tw/tags/</loc>
+    <lastmod>2021-12-21T14:53:55+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://starspiritstorm.github.io/en/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-tw"
+                href="https://starspiritstorm.github.io/zh-tw/tags/"
+                />
+  </url><url>
+    <loc>https://starspiritstorm.github.io/zh-tw/tags/windows/</loc>
+    <lastmod>2021-12-21T14:53:55+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://starspiritstorm.github.io/en/tags/windows/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-tw"
+                href="https://starspiritstorm.github.io/zh-tw/tags/windows/"
+                />
+  </url><url>
+    <loc>https://starspiritstorm.github.io/zh-tw/posts/install-chocolatey-in-windows/</loc>
+    <lastmod>2021-12-21T14:53:55+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://starspiritstorm.github.io/en/posts/install-chocolatey-in-windows/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-tw"
+                href="https://starspiritstorm.github.io/zh-tw/posts/install-chocolatey-in-windows/"
                 />
   </url><url>
     <loc>https://starspiritstorm.github.io/zh-tw/posts/auto-post-with-github-action/</loc>
@@ -78,30 +156,6 @@
                 rel="alternate"
                 hreflang="zh-tw"
                 href="https://starspiritstorm.github.io/zh-tw/posts/hello-world/"
-                />
-  </url><url>
-    <loc>https://starspiritstorm.github.io/zh-tw/categories/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://starspiritstorm.github.io/en/categories/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-tw"
-                href="https://starspiritstorm.github.io/zh-tw/categories/"
-                />
-  </url><url>
-    <loc>https://starspiritstorm.github.io/zh-tw/tags/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://starspiritstorm.github.io/en/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-tw"
-                href="https://starspiritstorm.github.io/zh-tw/tags/"
                 />
   </url>
 </urlset>
