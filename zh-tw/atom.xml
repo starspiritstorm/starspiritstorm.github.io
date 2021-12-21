@@ -4,7 +4,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh-tw">
     <title type="text">starspiritstorm</title>
     <subtitle type="html">starspiritstorm personal blogs.</subtitle>
-    <updated>2021-12-21T08:50:23&#43;00:00</updated>
+    <updated>2021-12-21T08:53:01&#43;00:00</updated>
     <id>https://starspiritstorm.github.io/zh-tw/</id>
     <link rel="alternate" type="text/html" href="https://starspiritstorm.github.io/zh-tw/" />
     <link rel="self" type="application/atom&#43;xml" href="https://starspiritstorm.github.io/zh-tw/atom.xml" />
@@ -16,6 +16,74 @@
             </author>
     <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</rights>
     <generator uri="https://gohugo.io/" version="0.91.0">Hugo</generator>
+        <entry>
+            <title type="text">在 Windows 環境下移除 Chocolatey</title>
+            <link rel="alternate" type="text/html" href="https://starspiritstorm.github.io/zh-tw/posts/uninstall-chocolatey-in-windows/" />
+            <id>https://starspiritstorm.github.io/zh-tw/posts/uninstall-chocolatey-in-windows/</id>
+            <updated>2021-12-21T16:20:52&#43;08:00</updated>
+            <published>2021-12-21T16:20:52&#43;08:00</published>
+            <author>
+                    <name>starspiritstorm</name>
+                    <uri>https://starspiritstorm.github.io/zh-tw/</uri>
+                    <email>starspiritstorm@gmail.com</email>
+                    </author>
+            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</rights><summary type="html">&lt;p&gt;參考 &lt;a href=&#34;https://docs.chocolatey.org/en-us/choco/uninstallation&#34;&gt;Chocolatey 官方網站 How to uninstall&lt;/a&gt;&lt;/p&gt;……</summary>
+            
+                <content type="html">&lt;p&gt;參考 &lt;a href=&#34;https://docs.chocolatey.org/en-us/choco/uninstallation&#34;&gt;Chocolatey 官方網站 How to uninstall&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;移除-chocolatey&#34;&gt;移除 Chocolatey&lt;/h2&gt;
+&lt;h3 id=&#34;移除步驟-1-砍掉-chocolatey-的資料夾&#34;&gt;移除步驟 1. 砍掉 Chocolatey 的資料夾&lt;/h3&gt;
+&lt;p&gt;把安裝路徑的資料夾砍掉，通常在 C:\ProgramData\chocolatey，不確定在哪的話可以用這行指令&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$env:ChocolateyInstall 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://starspiritstorm.github.io/figures_for_uninstall_chocolately/fig1.check_chocolately_location.png&#34; alt=&#34;fig1&#34; title=&#34;Fig1. 檢查 Chocolatey 的位置&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://starspiritstorm.github.io/figures_for_uninstall_chocolately/fig2.delete_chocolately_folder.png&#34; alt=&#34;fig2&#34; title=&#34;Fig2. 砍掉 Chocolatey 的資料夾&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;移除步驟-2-環境變數移除-chocolatey&#34;&gt;移除步驟 2. 環境變數移除 Chocolatey&lt;/h3&gt;
+&lt;p&gt;砍掉資料夾以後，還有環境變數的設定要砍&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://starspiritstorm.github.io/figures_for_uninstall_chocolately/fig3.remove_chocolately_from_environment1.png&#34; alt=&#34;fig3&#34; title=&#34;Fig3. 移除 Environment 內的 Chocolatey 步驟1&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://starspiritstorm.github.io/figures_for_uninstall_chocolately/fig4.remove_chocolately_from_environment2.png&#34; alt=&#34;fig4&#34; title=&#34;Fig4. 移除 Environment 內的 Chocolatey 步驟2&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://starspiritstorm.github.io/figures_for_uninstall_chocolately/fig5.remove_chocolately_from_environment3.png&#34; alt=&#34;fig5&#34; title=&#34;Fig5. 移除 Environment 內的 Chocolatey 步驟3&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://starspiritstorm.github.io/figures_for_uninstall_chocolately/fig6.remove_chocolately_from_environment4.png&#34; alt=&#34;fig6&#34; title=&#34;Fig6. 移除 Environment 內的 Chocolatey 步驟4&#34;&gt;&lt;/p&gt;
+&lt;p&gt;官方文件顯示有這幾項&lt;/p&gt;
+&lt;p&gt;ChocolateyInstall&lt;/p&gt;
+&lt;p&gt;ChocolateyToolsLocation&lt;/p&gt;
+&lt;p&gt;ChocolateyLastPathUpdate&lt;/p&gt;
+&lt;p&gt;PATH (will need updated to remove)&lt;/p&gt;
+&lt;p&gt;不過我這邊移除的時候沒看到 ChocolateyLastPathUpdate 就是了&lt;/p&gt;</content>
+            
+            
+            
+            
+            
+                
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://starspiritstorm.github.io/zh-tw/categories/chocolatey/" term="chocolatey" label="chocolatey" />
+                            
+                        
+                    
+                
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://starspiritstorm.github.io/zh-tw/tags/windows/" term="windows" label="windows" />
+                            
+                        
+                            
+                            
+                            
+                                <category scheme="https://starspiritstorm.github.io/zh-tw/tags/chocolatey/" term="chocolatey" label="chocolatey" />
+                            
+                        
+                    
+                
+            
+        </entry>
+    
         <entry>
             <title type="text">在 Windows 環境下安裝 Chocolatey</title>
             <link rel="alternate" type="text/html" href="https://starspiritstorm.github.io/zh-tw/posts/install-chocolatey-in-windows/" />

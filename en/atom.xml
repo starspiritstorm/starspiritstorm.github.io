@@ -4,7 +4,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
     <title type="text">starspiritstorm</title>
     <subtitle type="html">starspiritstorm personal blogs.</subtitle>
-    <updated>2021-12-21T08:50:23&#43;00:00</updated>
+    <updated>2021-12-21T08:53:01&#43;00:00</updated>
     <id>https://starspiritstorm.github.io/en/</id>
     <link rel="alternate" type="text/html" href="https://starspiritstorm.github.io/en/" />
     <link rel="self" type="application/atom&#43;xml" href="https://starspiritstorm.github.io/en/atom.xml" />
@@ -16,6 +16,75 @@
             </author>
     <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</rights>
     <generator uri="https://gohugo.io/" version="0.91.0">Hugo</generator>
+        <entry>
+            <title type="text">Uninstall Chocolatey in Windows</title>
+            <link rel="alternate" type="text/html" href="https://starspiritstorm.github.io/en/posts/uninstall-chocolatey-in-windows/" />
+            <id>https://starspiritstorm.github.io/en/posts/uninstall-chocolatey-in-windows/</id>
+            <updated>2021-12-21T16:20:52&#43;08:00</updated>
+            <published>2021-12-21T16:20:52&#43;08:00</published>
+            <author>
+                    <name>starspiritstorm</name>
+                    <uri>https://starspiritstorm.github.io/en/</uri>
+                    <email>starspiritstorm@gmail.com</email>
+                    </author>
+            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</rights><summary type="html">&lt;p&gt;Refer to &lt;a href=&#34;https://docs.chocolatey.org/en-us/choco/uninstallation&#34;&gt;Chocolatey Official website How to uninstall&lt;/a&gt;&lt;/p&gt;</summary>
+            
+                <content type="html">&lt;p&gt;Refer to &lt;a href=&#34;https://docs.chocolatey.org/en-us/choco/uninstallation&#34;&gt;Chocolatey Official website How to uninstall&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;uninstall-chocolatey&#34;&gt;Uninstall Chocolatey&lt;/h2&gt;
+&lt;h3 id=&#34;uninstall-step-1-delete-chocolatey-folder&#34;&gt;Uninstall step 1. Delete Chocolatey Folder&lt;/h3&gt;
+&lt;p&gt;Just directly delete the Chocolatey folder, ususally it will be at C:\ProgramData\chocolatey&lt;/p&gt;
+&lt;p&gt;if you are not sure where it is, you can use following command.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$env:ChocolateyInstall 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://starspiritstorm.github.io/figures_for_uninstall_chocolately/fig1.check_chocolately_location.png&#34; alt=&#34;fig1&#34; title=&#34;Fig1. Check Chocolatey location&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://starspiritstorm.github.io/figures_for_uninstall_chocolately/fig2.delete_chocolately_folder.png&#34; alt=&#34;fig2&#34; title=&#34;Fig2. Delete Chocolatey Folder&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;uninstall-step-2-remove-chocolately-from-environment&#34;&gt;Uninstall step 2. Remove chocolately from environment&lt;/h3&gt;
+&lt;p&gt;After deleted the Chocolatey folder, you need to remove chocolately from environment.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://starspiritstorm.github.io/figures_for_uninstall_chocolately/fig3.remove_chocolately_from_environment1.png&#34; alt=&#34;fig3&#34; title=&#34;Fig3. Remove Chocolatey from Environment step 1&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://starspiritstorm.github.io/figures_for_uninstall_chocolately/fig4.remove_chocolately_from_environment2.png&#34; alt=&#34;fig4&#34; title=&#34;Fig4. Remove Chocolatey from Environment step 2&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://starspiritstorm.github.io/figures_for_uninstall_chocolately/fig5.remove_chocolately_from_environment3.png&#34; alt=&#34;fig5&#34; title=&#34;Fig5. Remove Chocolatey from Environment step 3&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://starspiritstorm.github.io/figures_for_uninstall_chocolately/fig6.remove_chocolately_from_environment4.png&#34; alt=&#34;fig6&#34; title=&#34;Fig6. Remove Chocolatey from Environment step 4&#34;&gt;&lt;/p&gt;
+&lt;p&gt;The Official docs indicate there are four following subject need to be removed.&lt;/p&gt;
+&lt;p&gt;ChocolateyInstall&lt;/p&gt;
+&lt;p&gt;ChocolateyToolsLocation&lt;/p&gt;
+&lt;p&gt;ChocolateyLastPathUpdate&lt;/p&gt;
+&lt;p&gt;PATH (will need updated to remove)&lt;/p&gt;
+&lt;p&gt;But when I doing the remove, I didn&amp;rsquo;t see the ChocolateyLastPathUpdate.&lt;/p&gt;</content>
+            
+            
+            
+            
+            
+                
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://starspiritstorm.github.io/en/categories/chocolatey/" term="chocolatey" label="chocolatey" />
+                            
+                        
+                    
+                
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://starspiritstorm.github.io/en/tags/windows/" term="windows" label="windows" />
+                            
+                        
+                            
+                            
+                            
+                                <category scheme="https://starspiritstorm.github.io/en/tags/chocolatey/" term="chocolatey" label="chocolatey" />
+                            
+                        
+                    
+                
+            
+        </entry>
+    
         <entry>
             <title type="text">Install Chocolatey in Windows</title>
             <link rel="alternate" type="text/html" href="https://starspiritstorm.github.io/en/posts/install-chocolatey-in-windows/" />
