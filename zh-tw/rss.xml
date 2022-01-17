@@ -10,7 +10,7 @@
         <title>starspiritstorm</title>
         <link>https://starspiritstorm.github.io/zh-tw/</link>
         <description>starspiritstorm personal blogs.</description>
-        <generator>Hugo 0.91.0 https://gohugo.io/</generator>
+        <generator>Hugo 0.92.0 https://gohugo.io/</generator>
         
             <language>zh-tw</language>
         
@@ -23,7 +23,7 @@
         
             <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</copyright>
         
-        <lastBuildDate>Tue, 21 Dec 2021 08:53:01 &#43;0000</lastBuildDate>
+        <lastBuildDate>Mon, 17 Jan 2022 03:03:01 &#43;0000</lastBuildDate>
         
             <atom:link rel="self" type="application/rss&#43;xml" href="https://starspiritstorm.github.io/zh-tw/rss.xml" />
         
@@ -44,14 +44,14 @@
 &lt;p&gt;把安裝路徑的資料夾砍掉，通常在 C:\ProgramData\chocolatey，不確定在哪的話可以用這行指令&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;$env:ChocolateyInstall 
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;https://starspiritstorm.github.io/figures_for_uninstall_chocolately/fig1.check_chocolately_location.png&#34; alt=&#34;fig1&#34; title=&#34;Fig1. 檢查 Chocolatey 的位置&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://starspiritstorm.github.io/figures_for_uninstall_chocolately/fig2.delete_chocolately_folder.png&#34; alt=&#34;fig2&#34; title=&#34;Fig2. 砍掉 Chocolatey 的資料夾&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://starspiritstorm.github.io/images/uninstall_chocolately/fig1.check_chocolately_location.png&#34; alt=&#34;fig1&#34; title=&#34;Fig1. 檢查 Chocolatey 的位置&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://starspiritstorm.github.io/images/uninstall_chocolately/fig2.delete_chocolately_folder.png&#34; alt=&#34;fig2&#34; title=&#34;Fig2. 砍掉 Chocolatey 的資料夾&#34;&gt;&lt;/p&gt;
 &lt;h3 id=&#34;移除步驟-2-環境變數移除-chocolatey&#34;&gt;移除步驟 2. 環境變數移除 Chocolatey&lt;/h3&gt;
 &lt;p&gt;砍掉資料夾以後，還有環境變數的設定要砍&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://starspiritstorm.github.io/figures_for_uninstall_chocolately/fig3.remove_chocolately_from_environment1.png&#34; alt=&#34;fig3&#34; title=&#34;Fig3. 移除 Environment 內的 Chocolatey 步驟1&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://starspiritstorm.github.io/figures_for_uninstall_chocolately/fig4.remove_chocolately_from_environment2.png&#34; alt=&#34;fig4&#34; title=&#34;Fig4. 移除 Environment 內的 Chocolatey 步驟2&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://starspiritstorm.github.io/figures_for_uninstall_chocolately/fig5.remove_chocolately_from_environment3.png&#34; alt=&#34;fig5&#34; title=&#34;Fig5. 移除 Environment 內的 Chocolatey 步驟3&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://starspiritstorm.github.io/figures_for_uninstall_chocolately/fig6.remove_chocolately_from_environment4.png&#34; alt=&#34;fig6&#34; title=&#34;Fig6. 移除 Environment 內的 Chocolatey 步驟4&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://starspiritstorm.github.io/images/uninstall_chocolately/fig3.remove_chocolately_from_environment1.png&#34; alt=&#34;fig3&#34; title=&#34;Fig3. 移除 Environment 內的 Chocolatey 步驟1&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://starspiritstorm.github.io/images/uninstall_chocolately/fig4.remove_chocolately_from_environment2.png&#34; alt=&#34;fig4&#34; title=&#34;Fig4. 移除 Environment 內的 Chocolatey 步驟2&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://starspiritstorm.github.io/images/uninstall_chocolately/fig5.remove_chocolately_from_environment3.png&#34; alt=&#34;fig5&#34; title=&#34;Fig5. 移除 Environment 內的 Chocolatey 步驟3&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://starspiritstorm.github.io/images/uninstall_chocolately/fig6.remove_chocolately_from_environment4.png&#34; alt=&#34;fig6&#34; title=&#34;Fig6. 移除 Environment 內的 Chocolatey 步驟4&#34;&gt;&lt;/p&gt;
 &lt;p&gt;官方文件顯示有這幾項&lt;/p&gt;
 &lt;p&gt;ChocolateyInstall&lt;/p&gt;
 &lt;p&gt;ChocolateyToolsLocation&lt;/p&gt;
@@ -109,26 +109,26 @@
 &lt;p&gt;首先，要安裝 Chocolatey 就是要去他的官方網站&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://chocolatey.org/&#34;&gt;chocolatey 官方網站&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://chocolatey.org/install&#34;&gt;chocolatey 安裝頁面&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://starspiritstorm.github.io/figures_for_install_chocolately/fig1.Instruction_of_install_chocolately.png&#34; alt=&#34;fig1&#34; title=&#34;Fig1. Chocolatey 的官方網頁安裝步驟&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://starspiritstorm.github.io/images/install_chocolately/fig1.Instruction_of_install_chocolately.png&#34; alt=&#34;fig1&#34; title=&#34;Fig1. Chocolatey 的官方網頁安裝步驟&#34;&gt;&lt;/p&gt;
 &lt;h3 id=&#34;安裝步驟-1-用管理者權限開啟-windows-power-shell&#34;&gt;安裝步驟 1. 用&amp;quot;管理者權限&amp;quot;開啟 Windows Power Shell&lt;/h3&gt;
 &lt;p&gt;安裝頁面的指令需要用 Windows Power Shell  執行，Windows Power Shell 記得要用&amp;quot;管理者權限&amp;quot;開啟。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://starspiritstorm.github.io/figures_for_install_chocolately/fig2.start_power_shell_with_admin.png&#34; alt=&#34;fig2&#34; title=&#34;Fig2. 右鍵點選 Windows Power Shell 並用管理者權限開啟 &#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://starspiritstorm.github.io/images/install_chocolately/fig2.start_power_shell_with_admin.png&#34; alt=&#34;fig2&#34; title=&#34;Fig2. 右鍵點選 Windows Power Shell 並用管理者權限開啟 &#34;&gt;&lt;/p&gt;
 &lt;h3 id=&#34;安裝步驟-2-執行-chocolatey-官網提供的指令&#34;&gt;安裝步驟 2. 執行 Chocolatey 官網提供的指令&lt;/h3&gt;
 &lt;p&gt;根據 Chocolatey 的安裝指示，在安裝 Chocolatey 之前，最好先去 MSDN 確定一下你要的權限 level&lt;/p&gt;
 &lt;p&gt;檢查目前 Power Shell 的設定可以用這行指令&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;Get-ExecutionPolicy -list
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;https://starspiritstorm.github.io/figures_for_install_chocolately/fig3.check_ExecutionPolicy.png&#34; alt=&#34;fig3&#34; title=&#34;Fig3. 檢查權限&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://starspiritstorm.github.io/images/install_chocolately/fig3.check_ExecutionPolicy.png&#34; alt=&#34;fig3&#34; title=&#34;Fig3. 檢查權限&#34;&gt;&lt;/p&gt;
 &lt;p&gt;接下來就跑 &amp;ldquo;run following command&amp;rdquo; 的指令&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://starspiritstorm.github.io/figures_for_install_chocolately/fig4.run_following_command.png&#34; alt=&#34;fig4&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://starspiritstorm.github.io/images/install_chocolately/fig4.run_following_command.png&#34; alt=&#34;fig4&#34;&gt;&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString(&#39;https://community.chocolatey.org/install.ps1&#39;))
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;注意它裡面有寫 Bypass，所以你的 Set-ExecutionPolicy 會被設定成 Bypass，-Scope Process 這段是表示設定只套用於 Process&lt;/p&gt;
 &lt;p&gt;用 AllSigned 會有一堆詢問，看每個人的習慣自行決定要用 Bypass 還是 AllSigned，我比較懶所以就直接用 Bypass 了&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://starspiritstorm.github.io/figures_for_install_chocolately/fig5.Bypass.png&#34; alt=&#34;fig5&#34; title=&#34;Fig5. Bypass&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://starspiritstorm.github.io/figures_for_install_chocolately/fig6.AllSigned.png&#34; alt=&#34;fig6&#34; title=&#34;Fig6. AllSigned&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://starspiritstorm.github.io/images/install_chocolately/fig5.Bypass.png&#34; alt=&#34;fig5&#34; title=&#34;Fig5. Bypass&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://starspiritstorm.github.io/images/install_chocolately/fig6.AllSigned.png&#34; alt=&#34;fig6&#34; title=&#34;Fig6. AllSigned&#34;&gt;&lt;/p&gt;
 &lt;p&gt;最後裝完以後就會看到 Chocolatey (choco.exe) is now ready&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://starspiritstorm.github.io/figures_for_install_chocolately/fig7.Chocolately_ready.png&#34; alt=&#34;fig7&#34;&gt;&lt;/p&gt;</description>
+&lt;p&gt;&lt;img src=&#34;https://starspiritstorm.github.io/images/install_chocolately/fig7.Chocolately_ready.png&#34; alt=&#34;fig7&#34;&gt;&lt;/p&gt;</description>
                 
                 
                 

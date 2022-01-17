@@ -10,7 +10,7 @@
         <title>starspiritstorm</title>
         <link>https://starspiritstorm.github.io/en/</link>
         <description>starspiritstorm personal blogs.</description>
-        <generator>Hugo 0.91.0 https://gohugo.io/</generator>
+        <generator>Hugo 0.92.0 https://gohugo.io/</generator>
         
             <language>en</language>
         
@@ -23,7 +23,7 @@
         
             <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</copyright>
         
-        <lastBuildDate>Tue, 21 Dec 2021 08:53:01 &#43;0000</lastBuildDate>
+        <lastBuildDate>Mon, 17 Jan 2022 03:03:01 &#43;0000</lastBuildDate>
         
             <atom:link rel="self" type="application/rss&#43;xml" href="https://starspiritstorm.github.io/en/rss.xml" />
         
@@ -45,14 +45,14 @@
 &lt;p&gt;if you are not sure where it is, you can use following command.&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;$env:ChocolateyInstall 
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;https://starspiritstorm.github.io/figures_for_uninstall_chocolately/fig1.check_chocolately_location.png&#34; alt=&#34;fig1&#34; title=&#34;Fig1. Check Chocolatey location&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://starspiritstorm.github.io/figures_for_uninstall_chocolately/fig2.delete_chocolately_folder.png&#34; alt=&#34;fig2&#34; title=&#34;Fig2. Delete Chocolatey Folder&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://starspiritstorm.github.io/images/uninstall_chocolately/fig1.check_chocolately_location.png&#34; alt=&#34;fig1&#34; title=&#34;Fig1. Check Chocolatey location&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://starspiritstorm.github.io/images/uninstall_chocolately/fig2.delete_chocolately_folder.png&#34; alt=&#34;fig2&#34; title=&#34;Fig2. Delete Chocolatey Folder&#34;&gt;&lt;/p&gt;
 &lt;h3 id=&#34;uninstall-step-2-remove-chocolately-from-environment&#34;&gt;Uninstall step 2. Remove chocolately from environment&lt;/h3&gt;
 &lt;p&gt;After deleted the Chocolatey folder, you need to remove chocolately from environment.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://starspiritstorm.github.io/figures_for_uninstall_chocolately/fig3.remove_chocolately_from_environment1.png&#34; alt=&#34;fig3&#34; title=&#34;Fig3. Remove Chocolatey from Environment step 1&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://starspiritstorm.github.io/figures_for_uninstall_chocolately/fig4.remove_chocolately_from_environment2.png&#34; alt=&#34;fig4&#34; title=&#34;Fig4. Remove Chocolatey from Environment step 2&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://starspiritstorm.github.io/figures_for_uninstall_chocolately/fig5.remove_chocolately_from_environment3.png&#34; alt=&#34;fig5&#34; title=&#34;Fig5. Remove Chocolatey from Environment step 3&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://starspiritstorm.github.io/figures_for_uninstall_chocolately/fig6.remove_chocolately_from_environment4.png&#34; alt=&#34;fig6&#34; title=&#34;Fig6. Remove Chocolatey from Environment step 4&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://starspiritstorm.github.io/images/uninstall_chocolately/fig3.remove_chocolately_from_environment1.png&#34; alt=&#34;fig3&#34; title=&#34;Fig3. Remove Chocolatey from Environment step 1&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://starspiritstorm.github.io/images/uninstall_chocolately/fig4.remove_chocolately_from_environment2.png&#34; alt=&#34;fig4&#34; title=&#34;Fig4. Remove Chocolatey from Environment step 2&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://starspiritstorm.github.io/images/uninstall_chocolately/fig5.remove_chocolately_from_environment3.png&#34; alt=&#34;fig5&#34; title=&#34;Fig5. Remove Chocolatey from Environment step 3&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://starspiritstorm.github.io/images/uninstall_chocolately/fig6.remove_chocolately_from_environment4.png&#34; alt=&#34;fig6&#34; title=&#34;Fig6. Remove Chocolatey from Environment step 4&#34;&gt;&lt;/p&gt;
 &lt;p&gt;The Official docs indicate there are four following subject need to be removed.&lt;/p&gt;
 &lt;p&gt;ChocolateyInstall&lt;/p&gt;
 &lt;p&gt;ChocolateyToolsLocation&lt;/p&gt;
@@ -110,26 +110,26 @@
 &lt;p&gt;First, go to the official web site of Chocolatey&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://chocolatey.org/&#34;&gt;Chocolatey official site&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://chocolatey.org/install&#34;&gt;Chocolatey official site of install instruction&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://starspiritstorm.github.io/figures_for_install_chocolately/fig1.Instruction_of_install_chocolately.png&#34; alt=&#34;fig1&#34; title=&#34;Fig1. Official web site of Chocolatey install instruction&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://starspiritstorm.github.io/images/install_chocolately/fig1.Instruction_of_install_chocolately.png&#34; alt=&#34;fig1&#34; title=&#34;Fig1. Official web site of Chocolatey install instruction&#34;&gt;&lt;/p&gt;
 &lt;h3 id=&#34;install-step-1-using-system-administrator-to-open-windows-power-shell&#34;&gt;Install step 1. Using System Administrator to open Windows Power Shell&lt;/h3&gt;
 &lt;p&gt;The command needs Windows Power Shell to execute, remember using System Administrator to open Windows Power Shell&lt;/p&gt;
-&lt;p&gt;![fig2](/figures_for_install_chocolately/fig2.start_power_shell_with_admin.png &amp;ldquo;Fig2. Right click icon and select &amp;ldquo;Run as administrator&amp;rdquo; Windows Power Shell&amp;rdquo;)&lt;/p&gt;
+&lt;p&gt;![fig2](/images/install_chocolately/fig2.start_power_shell_with_admin.png &amp;ldquo;Fig2. Right click icon and select &amp;ldquo;Run as administrator&amp;rdquo; Windows Power Shell&amp;rdquo;)&lt;/p&gt;
 &lt;h3 id=&#34;install-step-2-execute-the-command-from-chocolatey-install-instruction&#34;&gt;Install step 2. Execute the command from Chocolatey install instruction&lt;/h3&gt;
 &lt;p&gt;According to Chocolatey install instruction, if you have some authority control issue, you better go to the MSDN to check which authority level you required.&lt;/p&gt;
 &lt;p&gt;To check the setting of your Power Shell, you can using the following command.&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;Get-ExecutionPolicy -list
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;https://starspiritstorm.github.io/figures_for_install_chocolately/fig3.check_ExecutionPolicy.png&#34; alt=&#34;fig3&#34; title=&#34;Fig3. Check your ExecutionPolicy&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://starspiritstorm.github.io/images/install_chocolately/fig3.check_ExecutionPolicy.png&#34; alt=&#34;fig3&#34; title=&#34;Fig3. Check your ExecutionPolicy&#34;&gt;&lt;/p&gt;
 &lt;p&gt;Then you can run the &amp;ldquo;run following command&amp;rdquo;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://starspiritstorm.github.io/figures_for_install_chocolately/fig4.run_following_command.png&#34; alt=&#34;fig4&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://starspiritstorm.github.io/images/install_chocolately/fig4.run_following_command.png&#34; alt=&#34;fig4&#34;&gt;&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString(&#39;https://community.chocolatey.org/install.ps1&#39;))
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Note that command has written the &amp;ldquo;Bypass&amp;rdquo;, so your Set-ExecutionPolicy will be set to Bypass, -Scope Process means only applied for Process&lt;/p&gt;
 &lt;p&gt;Using &amp;ldquo;AllSigned&amp;rdquo; will get multiple queries, it depends on your needs to decide using Bypass or AllSigned, I&amp;rsquo;m just lazy person so I just using Bypass.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://starspiritstorm.github.io/figures_for_install_chocolately/fig5.Bypass.png&#34; alt=&#34;fig5&#34; title=&#34;Fig5. Bypass&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://starspiritstorm.github.io/figures_for_install_chocolately/fig6.AllSigned.png&#34; alt=&#34;fig6&#34; title=&#34;Fig6. AllSigned&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://starspiritstorm.github.io/images/install_chocolately/fig5.Bypass.png&#34; alt=&#34;fig5&#34; title=&#34;Fig5. Bypass&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://starspiritstorm.github.io/images/install_chocolately/fig6.AllSigned.png&#34; alt=&#34;fig6&#34; title=&#34;Fig6. AllSigned&#34;&gt;&lt;/p&gt;
 &lt;p&gt;After finished, you will see Chocolatey (choco.exe) is now ready.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://starspiritstorm.github.io/figures_for_install_chocolately/fig7.Chocolately_ready.png&#34; alt=&#34;fig7&#34;&gt;&lt;/p&gt;</description>
+&lt;p&gt;&lt;img src=&#34;https://starspiritstorm.github.io/images/install_chocolately/fig7.Chocolately_ready.png&#34; alt=&#34;fig7&#34;&gt;&lt;/p&gt;</description>
                 
                 
                 
