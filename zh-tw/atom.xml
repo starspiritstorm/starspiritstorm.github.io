@@ -4,7 +4,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh-tw">
     <title type="text">starspiritstorm</title>
     <subtitle type="html">starspiritstorm personal blogs.</subtitle>
-    <updated>2022-01-28T06:43:06&#43;00:00</updated>
+    <updated>2022-03-15T02:06:07&#43;00:00</updated>
     <id>https://starspiritstorm.github.io/zh-tw/</id>
     <link rel="alternate" type="text/html" href="https://starspiritstorm.github.io/zh-tw/" />
     <link rel="self" type="application/atom&#43;xml" href="https://starspiritstorm.github.io/zh-tw/atom.xml" />
@@ -15,7 +15,75 @@
                 <email>starspiritstorm@gmail.com</email>
             </author>
     <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</rights>
-    <generator uri="https://gohugo.io/" version="0.92.1">Hugo</generator>
+    <generator uri="https://gohugo.io/" version="0.94.2">Hugo</generator>
+        <entry>
+            <title type="text">在 Windows 環境下安裝 Hugo</title>
+            <link rel="alternate" type="text/html" href="https://starspiritstorm.github.io/zh-tw/posts/install-hugo-in-windows/" />
+            <id>https://starspiritstorm.github.io/zh-tw/posts/install-hugo-in-windows/</id>
+            <updated>2022-03-15T08:00:00&#43;08:00</updated>
+            <published>2022-03-15T08:00:00&#43;08:00</published>
+            <author>
+                    <name>starspiritstorm</name>
+                    <uri>https://starspiritstorm.github.io/zh-tw/</uri>
+                    <email>starspiritstorm@gmail.com</email>
+                    </author>
+            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</rights><summary type="html">&lt;p&gt;安裝 Hugo。&lt;/p&gt;……</summary>
+            
+                <content type="html">&lt;p&gt;安裝 Hugo。&lt;/p&gt;
+&lt;h2 id=&#34;安裝-hugo&#34;&gt;安裝 Hugo&lt;/h2&gt;
+&lt;p&gt;裝完chocolatey後，開啟 powershell，然後輸入&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;choco install hugo -confirm
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://starspiritstorm.github.io/images/install_hugo/fig1.Install_hugo.png&#34; alt=&#34;fig1&#34; title=&#34;Fig1. 安裝 hugo&#34;&gt;&lt;/p&gt;
+&lt;p&gt;安裝好 hugo 後，安裝 hugo extended，輸入&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;choco install hugo-extended -confirm
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://starspiritstorm.github.io/images/install_hugo/fig2.Install_hugo_extended.png&#34; alt=&#34;fig2&#34; title=&#34;Fig2. 安裝 hugo extended&#34;&gt;&lt;/p&gt;
+&lt;p&gt;結束。&lt;/p&gt;
+&lt;h2 id=&#34;檢查-hugo-版本及反安裝-hugo&#34;&gt;檢查 Hugo 版本及反安裝 Hugo&lt;/h2&gt;
+&lt;p&gt;兩個簡單指令。&lt;/p&gt;
+&lt;p&gt;檢查版本&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;hugo version
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;反安裝Hugo&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;choco uninstall hugo
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://starspiritstorm.github.io/images/install_hugo/fig3.Check_hugo_version&amp;amp;Uninstall_hugo.png&#34; alt=&#34;fig3&#34; title=&#34;Fig3. 檢查hugo版本與反安裝hugo&#34;&gt;&lt;/p&gt;</content>
+            
+            
+            
+            
+            
+                
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://starspiritstorm.github.io/zh-tw/categories/hugo/" term="hugo" label="hugo" />
+                            
+                        
+                    
+                
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://starspiritstorm.github.io/zh-tw/tags/windows/" term="windows" label="windows" />
+                            
+                        
+                            
+                            
+                            
+                                <category scheme="https://starspiritstorm.github.io/zh-tw/tags/hugo/" term="hugo" label="hugo" />
+                            
+                        
+                    
+                
+            
+        </entry>
+    
         <entry>
             <title type="text">在 Windows 環境下移除 Chocolatey</title>
             <link rel="alternate" type="text/html" href="https://starspiritstorm.github.io/zh-tw/posts/uninstall-chocolatey-in-windows/" />

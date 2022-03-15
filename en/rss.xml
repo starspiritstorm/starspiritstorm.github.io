@@ -10,7 +10,7 @@
         <title>starspiritstorm</title>
         <link>https://starspiritstorm.github.io/en/</link>
         <description>starspiritstorm personal blogs.</description>
-        <generator>Hugo 0.92.1 https://gohugo.io/</generator>
+        <generator>Hugo 0.94.2 https://gohugo.io/</generator>
         
             <language>en</language>
         
@@ -23,10 +23,75 @@
         
             <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</copyright>
         
-        <lastBuildDate>Fri, 28 Jan 2022 06:43:06 &#43;0000</lastBuildDate>
+        <lastBuildDate>Tue, 15 Mar 2022 02:06:07 &#43;0000</lastBuildDate>
         
             <atom:link rel="self" type="application/rss&#43;xml" href="https://starspiritstorm.github.io/en/rss.xml" />
         
+        
+            <item>
+                <title>Install Hugo in Windows</title>
+                <link>https://starspiritstorm.github.io/en/posts/install-hugo-in-windows/</link>
+                <guid isPermaLink="true">https://starspiritstorm.github.io/en/posts/install-hugo-in-windows/</guid>
+                <pubDate>Tue, 15 Mar 2022 08:00:00 &#43;0800</pubDate>
+                
+                    <author>starspiritstorm@gmail.com (starspiritstorm)</author>
+                
+                <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</copyright>
+                
+                    <description>&lt;p&gt;Installing hugo.&lt;/p&gt;
+&lt;h2 id=&#34;install-hugo&#34;&gt;Install Hugo&lt;/h2&gt;
+&lt;p&gt;After finished installing chocolatey, just simply open up powershell, and type&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;choco install hugo -confirm
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://starspiritstorm.github.io/images/install_hugo/fig1.Install_hugo.png&#34; alt=&#34;fig1&#34; title=&#34;Fig1. Install hugo&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Then install hugo extended, type&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;choco install hugo-extended -confirm
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://starspiritstorm.github.io/images/install_hugo/fig2.Install_hugo_extended.png&#34; alt=&#34;fig2&#34; title=&#34;Fig2. Install hugo extended&#34;&gt;&lt;/p&gt;
+&lt;p&gt;And done.&lt;/p&gt;
+&lt;h2 id=&#34;check-hugo-version-and-uninstall-hugo&#34;&gt;Check Hugo version and Uninstall Hugo&lt;/h2&gt;
+&lt;p&gt;Two simple command.&lt;/p&gt;
+&lt;p&gt;Check version&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;hugo version
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Uninstall hugo&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;choco uninstall hugo
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://starspiritstorm.github.io/images/install_hugo/fig3.Check_hugo_version&amp;amp;Uninstall_hugo.png&#34; alt=&#34;fig3&#34; title=&#34;Fig3. Check_hugo_version&amp;amp;Uninstall_hugo&#34;&gt;&lt;/p&gt;</description>
+                
+                
+                
+                
+                
+                    
+                        
+                            
+                                
+                                
+                                
+                                    <category domain="https://starspiritstorm.github.io/en/categories/hugo/">hugo</category>
+                                
+                            
+                        
+                    
+                        
+                            
+                                
+                                
+                                
+                                    <category domain="https://starspiritstorm.github.io/en/tags/windows/">windows</category>
+                                
+                            
+                                
+                                
+                                
+                                    <category domain="https://starspiritstorm.github.io/en/tags/hugo/">hugo</category>
+                                
+                            
+                        
+                    
+                
+            </item>
         
             <item>
                 <title>Uninstall Chocolatey in Windows</title>

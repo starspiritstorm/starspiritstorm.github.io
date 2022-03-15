@@ -10,7 +10,7 @@
         <title>starspiritstorm</title>
         <link>https://starspiritstorm.github.io/zh-tw/</link>
         <description>starspiritstorm personal blogs.</description>
-        <generator>Hugo 0.92.1 https://gohugo.io/</generator>
+        <generator>Hugo 0.94.2 https://gohugo.io/</generator>
         
             <language>zh-tw</language>
         
@@ -23,10 +23,75 @@
         
             <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</copyright>
         
-        <lastBuildDate>Fri, 28 Jan 2022 06:43:06 &#43;0000</lastBuildDate>
+        <lastBuildDate>Tue, 15 Mar 2022 02:06:07 &#43;0000</lastBuildDate>
         
             <atom:link rel="self" type="application/rss&#43;xml" href="https://starspiritstorm.github.io/zh-tw/rss.xml" />
         
+        
+            <item>
+                <title>在 Windows 環境下安裝 Hugo</title>
+                <link>https://starspiritstorm.github.io/zh-tw/posts/install-hugo-in-windows/</link>
+                <guid isPermaLink="true">https://starspiritstorm.github.io/zh-tw/posts/install-hugo-in-windows/</guid>
+                <pubDate>Tue, 15 Mar 2022 08:00:00 &#43;0800</pubDate>
+                
+                    <author>starspiritstorm@gmail.com (starspiritstorm)</author>
+                
+                <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</copyright>
+                
+                    <description>&lt;p&gt;安裝 Hugo。&lt;/p&gt;
+&lt;h2 id=&#34;安裝-hugo&#34;&gt;安裝 Hugo&lt;/h2&gt;
+&lt;p&gt;裝完chocolatey後，開啟 powershell，然後輸入&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;choco install hugo -confirm
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://starspiritstorm.github.io/images/install_hugo/fig1.Install_hugo.png&#34; alt=&#34;fig1&#34; title=&#34;Fig1. 安裝 hugo&#34;&gt;&lt;/p&gt;
+&lt;p&gt;安裝好 hugo 後，安裝 hugo extended，輸入&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;choco install hugo-extended -confirm
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://starspiritstorm.github.io/images/install_hugo/fig2.Install_hugo_extended.png&#34; alt=&#34;fig2&#34; title=&#34;Fig2. 安裝 hugo extended&#34;&gt;&lt;/p&gt;
+&lt;p&gt;結束。&lt;/p&gt;
+&lt;h2 id=&#34;檢查-hugo-版本及反安裝-hugo&#34;&gt;檢查 Hugo 版本及反安裝 Hugo&lt;/h2&gt;
+&lt;p&gt;兩個簡單指令。&lt;/p&gt;
+&lt;p&gt;檢查版本&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;hugo version
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;反安裝Hugo&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;choco uninstall hugo
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://starspiritstorm.github.io/images/install_hugo/fig3.Check_hugo_version&amp;amp;Uninstall_hugo.png&#34; alt=&#34;fig3&#34; title=&#34;Fig3. 檢查hugo版本與反安裝hugo&#34;&gt;&lt;/p&gt;</description>
+                
+                
+                
+                
+                
+                    
+                        
+                            
+                                
+                                
+                                
+                                    <category domain="https://starspiritstorm.github.io/zh-tw/categories/hugo/">hugo</category>
+                                
+                            
+                        
+                    
+                        
+                            
+                                
+                                
+                                
+                                    <category domain="https://starspiritstorm.github.io/zh-tw/tags/windows/">windows</category>
+                                
+                            
+                                
+                                
+                                
+                                    <category domain="https://starspiritstorm.github.io/zh-tw/tags/hugo/">hugo</category>
+                                
+                            
+                        
+                    
+                
+            </item>
         
             <item>
                 <title>在 Windows 環境下移除 Chocolatey</title>

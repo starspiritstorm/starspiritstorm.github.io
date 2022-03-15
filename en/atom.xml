@@ -4,7 +4,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
     <title type="text">starspiritstorm</title>
     <subtitle type="html">starspiritstorm personal blogs.</subtitle>
-    <updated>2022-01-28T06:43:06&#43;00:00</updated>
+    <updated>2022-03-15T02:06:07&#43;00:00</updated>
     <id>https://starspiritstorm.github.io/en/</id>
     <link rel="alternate" type="text/html" href="https://starspiritstorm.github.io/en/" />
     <link rel="self" type="application/atom&#43;xml" href="https://starspiritstorm.github.io/en/atom.xml" />
@@ -15,7 +15,75 @@
                 <email>starspiritstorm@gmail.com</email>
             </author>
     <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</rights>
-    <generator uri="https://gohugo.io/" version="0.92.1">Hugo</generator>
+    <generator uri="https://gohugo.io/" version="0.94.2">Hugo</generator>
+        <entry>
+            <title type="text">Install Hugo in Windows</title>
+            <link rel="alternate" type="text/html" href="https://starspiritstorm.github.io/en/posts/install-hugo-in-windows/" />
+            <id>https://starspiritstorm.github.io/en/posts/install-hugo-in-windows/</id>
+            <updated>2022-03-15T08:00:00&#43;08:00</updated>
+            <published>2022-03-15T08:00:00&#43;08:00</published>
+            <author>
+                    <name>starspiritstorm</name>
+                    <uri>https://starspiritstorm.github.io/en/</uri>
+                    <email>starspiritstorm@gmail.com</email>
+                    </author>
+            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</rights><summary type="html">&lt;p&gt;Installing hugo.&lt;/p&gt;</summary>
+            
+                <content type="html">&lt;p&gt;Installing hugo.&lt;/p&gt;
+&lt;h2 id=&#34;install-hugo&#34;&gt;Install Hugo&lt;/h2&gt;
+&lt;p&gt;After finished installing chocolatey, just simply open up powershell, and type&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;choco install hugo -confirm
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://starspiritstorm.github.io/images/install_hugo/fig1.Install_hugo.png&#34; alt=&#34;fig1&#34; title=&#34;Fig1. Install hugo&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Then install hugo extended, type&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;choco install hugo-extended -confirm
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://starspiritstorm.github.io/images/install_hugo/fig2.Install_hugo_extended.png&#34; alt=&#34;fig2&#34; title=&#34;Fig2. Install hugo extended&#34;&gt;&lt;/p&gt;
+&lt;p&gt;And done.&lt;/p&gt;
+&lt;h2 id=&#34;check-hugo-version-and-uninstall-hugo&#34;&gt;Check Hugo version and Uninstall Hugo&lt;/h2&gt;
+&lt;p&gt;Two simple command.&lt;/p&gt;
+&lt;p&gt;Check version&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;hugo version
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Uninstall hugo&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;choco uninstall hugo
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://starspiritstorm.github.io/images/install_hugo/fig3.Check_hugo_version&amp;amp;Uninstall_hugo.png&#34; alt=&#34;fig3&#34; title=&#34;Fig3. Check_hugo_version&amp;amp;Uninstall_hugo&#34;&gt;&lt;/p&gt;</content>
+            
+            
+            
+            
+            
+                
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://starspiritstorm.github.io/en/categories/hugo/" term="hugo" label="hugo" />
+                            
+                        
+                    
+                
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://starspiritstorm.github.io/en/tags/windows/" term="windows" label="windows" />
+                            
+                        
+                            
+                            
+                            
+                                <category scheme="https://starspiritstorm.github.io/en/tags/hugo/" term="hugo" label="hugo" />
+                            
+                        
+                    
+                
+            
+        </entry>
+    
         <entry>
             <title type="text">Uninstall Chocolatey in Windows</title>
             <link rel="alternate" type="text/html" href="https://starspiritstorm.github.io/en/posts/uninstall-chocolatey-in-windows/" />
