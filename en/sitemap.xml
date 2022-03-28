@@ -2,8 +2,21 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://starspiritstorm.github.io/en/tags/blog/</loc>
+    <lastmod>2022-03-18T12:00:00+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-tw"
+                href="https://starspiritstorm.github.io/zh-tw/tags/blog/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://starspiritstorm.github.io/en/tags/blog/"
+                />
+  </url><url>
     <loc>https://starspiritstorm.github.io/en/categories/</loc>
-    <lastmod>2022-03-15T08:00:00+08:00</lastmod>
+    <lastmod>2022-03-18T12:00:00+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-tw"
@@ -15,8 +28,60 @@
                 href="https://starspiritstorm.github.io/en/categories/"
                 />
   </url><url>
+    <loc>https://starspiritstorm.github.io/en/posts/establish-hugo-site-on-githubpage/</loc>
+    <lastmod>2022-03-18T12:00:00+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-tw"
+                href="https://starspiritstorm.github.io/zh-tw/posts/establish-hugo-site-on-githubpage/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://starspiritstorm.github.io/en/posts/establish-hugo-site-on-githubpage/"
+                />
+  </url><url>
+    <loc>https://starspiritstorm.github.io/en/tags/github/</loc>
+    <lastmod>2022-03-18T12:00:00+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-tw"
+                href="https://starspiritstorm.github.io/zh-tw/tags/github/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://starspiritstorm.github.io/en/tags/github/"
+                />
+  </url><url>
+    <loc>https://starspiritstorm.github.io/en/tags/github-action/</loc>
+    <lastmod>2022-03-18T12:00:00+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-tw"
+                href="https://starspiritstorm.github.io/zh-tw/tags/github-action/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://starspiritstorm.github.io/en/tags/github-action/"
+                />
+  </url><url>
+    <loc>https://starspiritstorm.github.io/en/tags/github-pages/</loc>
+    <lastmod>2022-03-18T12:00:00+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-tw"
+                href="https://starspiritstorm.github.io/zh-tw/tags/github-pages/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://starspiritstorm.github.io/en/tags/github-pages/"
+                />
+  </url><url>
     <loc>https://starspiritstorm.github.io/en/tags/hugo/</loc>
-    <lastmod>2022-03-15T08:00:00+08:00</lastmod>
+    <lastmod>2022-03-18T12:00:00+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-tw"
@@ -29,7 +94,7 @@
                 />
   </url><url>
     <loc>https://starspiritstorm.github.io/en/categories/hugo/</loc>
-    <lastmod>2022-03-15T08:00:00+08:00</lastmod>
+    <lastmod>2022-03-18T12:00:00+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-tw"
@@ -39,6 +104,58 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://starspiritstorm.github.io/en/categories/hugo/"
+                />
+  </url><url>
+    <loc>https://starspiritstorm.github.io/en/posts/</loc>
+    <lastmod>2022-03-18T12:00:00+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-tw"
+                href="https://starspiritstorm.github.io/zh-tw/posts/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://starspiritstorm.github.io/en/posts/"
+                />
+  </url><url>
+    <loc>https://starspiritstorm.github.io/en/</loc>
+    <lastmod>2022-03-18T12:00:00+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-tw"
+                href="https://starspiritstorm.github.io/zh-tw/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://starspiritstorm.github.io/en/"
+                />
+  </url><url>
+    <loc>https://starspiritstorm.github.io/en/tags/</loc>
+    <lastmod>2022-03-18T12:00:00+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-tw"
+                href="https://starspiritstorm.github.io/zh-tw/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://starspiritstorm.github.io/en/tags/"
+                />
+  </url><url>
+    <loc>https://starspiritstorm.github.io/en/tags/theme-meme/</loc>
+    <lastmod>2022-03-18T12:00:00+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-tw"
+                href="https://starspiritstorm.github.io/zh-tw/tags/theme-meme/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://starspiritstorm.github.io/en/tags/theme-meme/"
                 />
   </url><url>
     <loc>https://starspiritstorm.github.io/en/posts/install-hugo-in-windows/</loc>
@@ -52,45 +169,6 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://starspiritstorm.github.io/en/posts/install-hugo-in-windows/"
-                />
-  </url><url>
-    <loc>https://starspiritstorm.github.io/en/posts/</loc>
-    <lastmod>2022-03-15T08:00:00+08:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-tw"
-                href="https://starspiritstorm.github.io/zh-tw/posts/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://starspiritstorm.github.io/en/posts/"
-                />
-  </url><url>
-    <loc>https://starspiritstorm.github.io/en/</loc>
-    <lastmod>2022-03-15T08:00:00+08:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-tw"
-                href="https://starspiritstorm.github.io/zh-tw/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://starspiritstorm.github.io/en/"
-                />
-  </url><url>
-    <loc>https://starspiritstorm.github.io/en/tags/</loc>
-    <lastmod>2022-03-15T08:00:00+08:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-tw"
-                href="https://starspiritstorm.github.io/zh-tw/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://starspiritstorm.github.io/en/tags/"
                 />
   </url><url>
     <loc>https://starspiritstorm.github.io/en/tags/windows/</loc>

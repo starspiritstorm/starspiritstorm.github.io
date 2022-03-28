@@ -10,7 +10,7 @@
         <title>starspiritstorm</title>
         <link>https://starspiritstorm.github.io/zh-tw/</link>
         <description>starspiritstorm personal blogs.</description>
-        <generator>Hugo 0.94.2 https://gohugo.io/</generator>
+        <generator>Hugo 0.96.0 https://gohugo.io/</generator>
         
             <language>zh-tw</language>
         
@@ -23,10 +23,323 @@
         
             <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</copyright>
         
-        <lastBuildDate>Tue, 15 Mar 2022 02:06:07 &#43;0000</lastBuildDate>
+        <lastBuildDate>Mon, 28 Mar 2022 04:22:34 &#43;0000</lastBuildDate>
         
             <atom:link rel="self" type="application/rss&#43;xml" href="https://starspiritstorm.github.io/zh-tw/rss.xml" />
         
+        
+            <item>
+                <title>在 Github Pages 上建立 Hugo</title>
+                <link>https://starspiritstorm.github.io/zh-tw/posts/establish-hugo-site-on-githubpage/</link>
+                <guid isPermaLink="true">https://starspiritstorm.github.io/zh-tw/posts/establish-hugo-site-on-githubpage/</guid>
+                <pubDate>Fri, 18 Mar 2022 12:00:00 &#43;0800</pubDate>
+                
+                    <author>starspiritstorm@gmail.com (starspiritstorm)</author>
+                
+                <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</copyright>
+                
+                    <description>&lt;p&gt;在 Github Pages 上建立 Hugo。&lt;/p&gt;
+&lt;h2 id=&#34;建立-hugo-site&#34;&gt;建立 Hugo Site&lt;/h2&gt;
+&lt;h3 id=&#34;本地端&#34;&gt;本地端&lt;/h3&gt;
+&lt;p&gt;先到你喜歡的資料夾裡面，開啟 git bash&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://starspiritstorm.github.io/images/establish-hugo-site-on-githubpage/fig01.start_git_bash_here.png&#34; alt=&#34;fig01&#34; title=&#34;Fig1. start git bash here&#34;&gt;&lt;/p&gt;
+&lt;p&gt;hugo 的產生 hugo site 相關內容的指令&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;hugo new site myblog
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;進入剛剛創好的&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;cd myblog/
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://starspiritstorm.github.io/images/establish-hugo-site-on-githubpage/fig02.hugo_new_site.png&#34; alt=&#34;fig02&#34; title=&#34;Fig2. hugo new site&#34;&gt;
+&lt;img src=&#34;https://starspiritstorm.github.io/images/establish-hugo-site-on-githubpage/fig03.cd_folder.png&#34; alt=&#34;fig03&#34; title=&#34;Fig3. cd folder&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;安裝-hugo-theme---meme&#34;&gt;安裝 Hugo Theme - meme&lt;/h3&gt;
+&lt;p&gt;可以到 &lt;a href=&#34;https://hugoranked.com/&#34;&gt;hugoranked&lt;/a&gt; 看星星數多的，&lt;/p&gt;
+&lt;p&gt;或是直接到 &lt;a href=&#34;https://themes.gohugo.io/&#34;&gt;hugo 的官方網站&lt;/a&gt; 的theme挑選喜歡的主題，&lt;/p&gt;
+&lt;p&gt;這邊我挑的是 theme/meme，&lt;/p&gt;
+&lt;p&gt;不同的 theme 請看各個 theme 的教學引導。&lt;/p&gt;
+&lt;p&gt;利用 git 取得 theme meme&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;git init
+git submodule add --depth 1 https://github.com/reuixiy/hugo-theme-meme.git themes/meme
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;套用 hugo theme meme 的config.toml&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;rm config.toml &amp;amp;&amp;amp; cp themes/meme/config-examples/en/config.toml config.toml
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://starspiritstorm.github.io/images/establish-hugo-site-on-githubpage/fig05.git_command.png&#34; alt=&#34;fig05&#34; title=&#34;Fig5. git command&#34;&gt;&lt;/p&gt;
+&lt;p&gt;修改 config.toml 的 baseurl = &amp;ldquo;https://[your_github_username].github.io/&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;例：https://starspiritstorm.github.io/&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://starspiritstorm.github.io/images/establish-hugo-site-on-githubpage/fig05-1.edit_config.png&#34; alt=&#34;fig05-1&#34; title=&#34;Fig5-1. edit config&#34;&gt;
+&lt;img src=&#34;https://starspiritstorm.github.io/images/establish-hugo-site-on-githubpage/fig05-2.rename_url.png&#34; alt=&#34;fig05-2&#34; title=&#34;Fig5-2. rename url&#34;&gt;
+&lt;img src=&#34;https://starspiritstorm.github.io/images/establish-hugo-site-on-githubpage/fig05-3.rename_url_yours.png&#34; alt=&#34;fig05-3&#34; title=&#34;Fig5-3. rename url yours&#34;&gt;&lt;/p&gt;
+&lt;p&gt;產生簡單的 post&amp;amp;about&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;hugo new &amp;quot;posts/hello-world.md&amp;quot;
+hugo new &amp;quot;about/_index.md&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://starspiritstorm.github.io/images/establish-hugo-site-on-githubpage/fig06.generate_posts.png&#34; alt=&#34;fig06&#34; title=&#34;Fig6. generate posts&#34;&gt;&lt;/p&gt;
+&lt;p&gt;這邊有一點要注意的是，hugo new 產生的文章預設 draft 都是 true，用 notepad++ 開啟，&lt;/p&gt;
+&lt;p&gt;並把 draft 設定改成 false 才會真正的在 Github Pages 上顯示出來。&lt;/p&gt;
+&lt;p&gt;路徑在分別在&lt;/p&gt;
+&lt;p&gt;myblog\content\posts&lt;/p&gt;
+&lt;p&gt;myblog\content\about&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://starspiritstorm.github.io/images/establish-hugo-site-on-githubpage/fig06-1.file_in_posts.png&#34; alt=&#34;fig06-1&#34; title=&#34;Fig6-1. file in posts&#34;&gt;
+&lt;img src=&#34;https://starspiritstorm.github.io/images/establish-hugo-site-on-githubpage/fig06-2.file_in_about.png&#34; alt=&#34;fig06-2&#34; title=&#34;Fig6-2. file in about&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://starspiritstorm.github.io/images/establish-hugo-site-on-githubpage/fig07-1.about_draft_false.png&#34; alt=&#34;fig07-1&#34; title=&#34;Fig7-1. about draft false&#34;&gt;
+&lt;img src=&#34;https://starspiritstorm.github.io/images/establish-hugo-site-on-githubpage/fig07-2.post_draft_false.png&#34; alt=&#34;fig07-2&#34; title=&#34;Fig7-2. post draft false&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;本地端檢驗-hugo-site&#34;&gt;本地端檢驗 Hugo site&lt;/h3&gt;
+&lt;p&gt;開啟&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;hugo server -D
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://starspiritstorm.github.io/images/establish-hugo-site-on-githubpage/fig08.hugo_server.png&#34; alt=&#34;fig08&#34; title=&#34;Fig8. hugo server&#34;&gt;&lt;/p&gt;
+&lt;p&gt;到瀏覽器 URL 輸入&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;http://localhost:1313/
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;檢查本地端是否能成功看到剛剛建好的網頁&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://starspiritstorm.github.io/images/establish-hugo-site-on-githubpage/fig09.hugo_blog_in_local.png&#34; alt=&#34;fig09&#34; title=&#34;Fig9. hugo blog in local&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;部屬至-github-pages&#34;&gt;部屬至 Github Pages&lt;/h2&gt;
+&lt;h3 id=&#34;先產生-github-pages-的-repository&#34;&gt;先產生 Github Pages 的 repository&lt;/h3&gt;
+&lt;p&gt;先去 github 產生你的 Github Pages 需要用到的 repository。&lt;/p&gt;
+&lt;p&gt;repository 的名字必須是 &amp;ldquo;[你的github帳號].github.io&amp;rdquo;。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://starspiritstorm.github.io/images/establish-hugo-site-on-githubpage/fig10.create_yourname.github.io_step1.png&#34; alt=&#34;fig10&#34; title=&#34;Fig10. step1 yourname.github.io&#34;&gt;
+&lt;img src=&#34;https://starspiritstorm.github.io/images/establish-hugo-site-on-githubpage/fig11.create_yourname.github.io_step2.png&#34; alt=&#34;fig11&#34; title=&#34;Fig11. step2 yourname.github.io&#34;&gt;
+&lt;img src=&#34;https://starspiritstorm.github.io/images/establish-hugo-site-on-githubpage/fig12.create_yourname.github.io_step3.png&#34; alt=&#34;fig12&#34; title=&#34;Fig12. step3 yourname.github.io&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;在-myblog-下產生-hugo-的-public-資料夾&#34;&gt;在 myblog 下，產生 hugo 的 public 資料夾&lt;/h3&gt;
+&lt;p&gt;再回到剛剛創好的 myblog 路徑下，直接執行&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;hugo
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://starspiritstorm.github.io/images/establish-hugo-site-on-githubpage/fig14.execute_hugo.png&#34; alt=&#34;fig14&#34; title=&#34;Fig14. execute hugo&#34;&gt;&lt;/p&gt;
+&lt;p&gt;會看到 public 資料夾產生，然後進入 public 資料夾&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;cd public/
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;public 資料夾是 hugo for Github Pages 靜態頁面用的，也就是&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/%5B&#34;&gt;https://github.com/[&lt;/a&gt;你的帳號]/[你的帳號].github.io&lt;/p&gt;
+&lt;p&gt;這個 repository 要用的。&lt;/p&gt;
+&lt;h3 id=&#34;在-public-資料夾開啟-git要上-github-用的&#34;&gt;在 public 資料夾，開啟 git，要上 github 用的&lt;/h3&gt;
+&lt;p&gt;接下來要在 public 資料夾裡面開 git 才能推到 github 上。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;git init
+git remote add origin https://github.com/[你的帳號]/[你的帳號].github.io
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;例：git remote add origin &lt;a href=&#34;https://github.com/starspiritstorm/starspiritstorm.github.io&#34;&gt;https://github.com/starspiritstorm/starspiritstorm.github.io&lt;/a&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;git add .
+git commit -m &amp;quot;Initial commit&amp;quot;
+git push --set-upstream origin master
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://starspiritstorm.github.io/images/establish-hugo-site-on-githubpage/fig15.init_git_in_public1.png&#34; alt=&#34;fig15&#34; title=&#34;Fig15. init git in public&#34;&gt;
+&lt;img src=&#34;https://starspiritstorm.github.io/images/establish-hugo-site-on-githubpage/fig16.init_git_in_public2.png&#34; alt=&#34;fig16&#34; title=&#34;Fig16. init git in public2&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;到-github-網頁設定-source&#34;&gt;到 github 網頁設定 Source&lt;/h3&gt;
+&lt;p&gt;推完之後還需要去設定。&lt;/p&gt;
+&lt;p&gt;Settings &amp;gt; Options &amp;gt; Github Pages &amp;gt; Source to “master branch”&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://starspiritstorm.github.io/images/establish-hugo-site-on-githubpage/fig18.github_setting_source1.png&#34; alt=&#34;fig18&#34; title=&#34;Fig18. github setting source1&#34;&gt;
+&lt;img src=&#34;https://starspiritstorm.github.io/images/establish-hugo-site-on-githubpage/fig19.github_setting_source2.png&#34; alt=&#34;fig19&#34; title=&#34;Fig19. github setting source2&#34;&gt;
+&lt;img src=&#34;https://starspiritstorm.github.io/images/establish-hugo-site-on-githubpage/fig20.github_setting_source3.png&#34; alt=&#34;fig20&#34; title=&#34;Fig20. github setting source3&#34;&gt;&lt;/p&gt;
+&lt;p&gt;推完之後就可以到 你的 Github Pages (https://[你的帳號].github.io/) 看看結果了。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://starspiritstorm.github.io/images/establish-hugo-site-on-githubpage/fig22.github_pages_result.png&#34; alt=&#34;fig22&#34; title=&#34;Fig22. github pages result&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;github-pages-hugo-source-code&#34;&gt;Github Pages hugo source code&lt;/h2&gt;
+&lt;h3 id=&#34;產生-github-pages-source-code-的-repository&#34;&gt;產生 Github Pages source code 的 repository&lt;/h3&gt;
+&lt;p&gt;這邊要注意的是，所有文章的 source code 還是存放在你的本地端，
+剛剛的 Github Pages 實際上只有上傳了 public 資料夾內的東西到你的 Github Pages 的 repository。&lt;/p&gt;
+&lt;p&gt;所以還需要再開另外一個 github repository，來儲存你的 source code，
+步驟跟剛剛開 Github Pages 的方法一樣，名稱可以自己取一個喜歡的，這邊我是直接這樣取。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;https://github.com/[你的帳號]/[你的帳號]_githubpages_source
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;例：https://github.com/starspiritstorm/starspiritstorm_githubpages_source&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://starspiritstorm.github.io/images/establish-hugo-site-on-githubpage/fig24.create_source_code_repository.png&#34; alt=&#34;fig24&#34; title=&#34;Fig24. create source code repository&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;回-myblog-資料夾開啟-git要上-github_source_code-用的&#34;&gt;回 myblog 資料夾，開啟 git，要上 github_source_code 用的&lt;/h3&gt;
+&lt;p&gt;創好之後再回到 myblog 資料夾重新開一個 git bash。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://starspiritstorm.github.io/images/establish-hugo-site-on-githubpage/fig25.open_git_bash_in_myblog.png&#34; alt=&#34;fig25&#34; title=&#34;Fig25. open git bash in myblog&#34;&gt;&lt;/p&gt;
+&lt;p&gt;然後產生一個 gitignore 把 public 資料夾排除，因為 public 是 hugo build 出來的產物&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;echo &amp;quot;public/&amp;quot; &amp;gt;&amp;gt; .gitignore
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://starspiritstorm.github.io/images/establish-hugo-site-on-githubpage/fig26.git_ignore_public.png&#34; alt=&#34;fig26&#34; title=&#34;Fig26. git ignore public&#34;&gt;&lt;/p&gt;
+&lt;p&gt;然後做一樣的事情把你的 source code 推到新的 repository。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;git init
+git remote add origin https://github.com/[你的帳號]/[你的帳號]_githubpages_source
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;例：git remote add origin &lt;a href=&#34;https://github.com/starspiritstorm/starspiritstorm_githubpages_source&#34;&gt;https://github.com/starspiritstorm/starspiritstorm_githubpages_source&lt;/a&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;git add .
+git commit -m &amp;quot;Add hugo source code&amp;quot;
+git push --set-upstream origin master
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://starspiritstorm.github.io/images/establish-hugo-site-on-githubpage/fig27.init_git_in_myblog.png&#34; alt=&#34;fig27&#34; title=&#34;Fig27. init git in myblog&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;自動化部屬-github-action只要推-source-code就會幫你更新-github-pages&#34;&gt;自動化部屬 (GitHub Action)，只要推 source code，就會幫你更新 Github Pages&lt;/h2&gt;
+&lt;h3 id=&#34;submodule-要產一個-public-出來&#34;&gt;Submodule 要產一個 public 出來&lt;/h3&gt;
+&lt;p&gt;最後一步驟，藉由 GitHub Action 來做自動化部署。&lt;/p&gt;
+&lt;p&gt;為了後面要能自動化部署，需要先產生 submodule public 預備著&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;https://starspiritstorm.github.io/zh-tw/posts/establish-hugo-site-on-githubpage/#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;git submodule add -f --depth 1 https://github.com/[你的帳號]/[你的帳號].github.io.git public
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;例：git submodule add -f &amp;ndash;depth 1 &lt;a href=&#34;https://github.com/starspiritstorm/starspiritstorm.github.io.git&#34;&gt;https://github.com/starspiritstorm/starspiritstorm.github.io.git&lt;/a&gt; public&lt;/p&gt;
+&lt;p&gt;產生完之後記得 commit &amp;amp; push。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://starspiritstorm.github.io/images/establish-hugo-site-on-githubpage/fig28.submodule_commit.png&#34; alt=&#34;fig28&#34; title=&#34;Fig28. submodule commit&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;產生-github-personal-access-token&#34;&gt;產生 github Personal Access Token&lt;/h3&gt;
+&lt;p&gt;先到 &lt;a href=&#34;https://github.com/settings/tokens/new&#34;&gt;這個頁面&lt;/a&gt; ，產生 Personal Access Token (PAT)。&lt;/p&gt;
+&lt;p&gt;名稱可以自取，過期時間先選 No expired，因為也只會給 workflow 用，如果之後有疑慮可以重新產生 token。&lt;/p&gt;
+&lt;p&gt;勾選 workflow&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://starspiritstorm.github.io/images/establish-hugo-site-on-githubpage/fig30.generate_github_personal_access_token.png&#34; alt=&#34;fig30&#34; title=&#34;Fig30. generate github personal access token&#34;&gt;&lt;/p&gt;
+&lt;p&gt;拉到下面按產生&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://starspiritstorm.github.io/images/establish-hugo-site-on-githubpage/fig31.click_generate.png&#34; alt=&#34;fig31&#34; title=&#34;Fig31. click generate&#34;&gt;&lt;/p&gt;
+&lt;p&gt;產生完以後先複製token的值&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://starspiritstorm.github.io/images/establish-hugo-site-on-githubpage/fig32.PAT_generated.png&#34; alt=&#34;fig32&#34; title=&#34;Fig32. PAT generated&#34;&gt;&lt;/p&gt;
+&lt;p&gt;到存放你 source code 的 repository 去設定剛剛產生好的 token&lt;/p&gt;
+&lt;p&gt;Settings &amp;gt; Secret &amp;gt; New repository secret&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://starspiritstorm.github.io/images/establish-hugo-site-on-githubpage/fig33.use_token.png&#34; alt=&#34;fig33&#34; title=&#34;Fig33. use token&#34;&gt;&lt;/p&gt;
+&lt;p&gt;取名 HUGO_DEPLOY_TOKEN，並貼上剛剛複製的token的值&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://starspiritstorm.github.io/images/establish-hugo-site-on-githubpage/fig34.generate_new_secret.png&#34; alt=&#34;fig34&#34; title=&#34;Fig34. generate new secret&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;設定-github-action-的-workflow&#34;&gt;設定 GitHub Action 的 workflow&lt;/h3&gt;
+&lt;p&gt;到 Github Action 頁面，點選 set up a workflow your self&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://starspiritstorm.github.io/images/establish-hugo-site-on-githubpage/fig35.set_up_a_workflow.png&#34; alt=&#34;fig35&#34; title=&#34;Fig35. set up a workflow&#34;&gt;&lt;/p&gt;
+&lt;p&gt;在左邊 Edit New file 裡面把下面的 script 貼上後，
+記得把 external_repository 修改成你的 Github Pages 的 repository。&lt;/p&gt;
+&lt;p&gt;按下 start commit 後等他跑完。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://starspiritstorm.github.io/images/establish-hugo-site-on-githubpage/fig36.use_script.png&#34; alt=&#34;fig36&#34; title=&#34;Fig35. use script&#34;&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;name: hugo CI
+
+on:
+  push:
+	branches: [ master ]
+
+jobs:
+  build:
+	runs-on: ubuntu-latest
+
+	steps:
+	  - uses: actions/checkout@v2
+		with:
+		  submodules: true 
+		  fetch-depth: 1
+
+	  - name: Setup Hugo
+		uses: peaceiris/actions-hugo@v2
+		with:
+		  hugo-version: &#39;latest&#39;
+		  extended: true 
+
+	  - name: Build
+		run: hugo
+
+	  - name: Deploy
+		uses: peaceiris/actions-gh-pages@v3
+		with:
+									  #[2]：這邊名稱要填入剛剛在 secret 產生的 token 的名稱，此行記得刪除
+		  personal_token: ${{ secrets.HUGO_DEPLOY_TOKEN }}
+							   #[3]：這邊要輸入的是你的 Github Pages 的 repo，此行記得刪除
+		  external_repository: starspiritstorm/starspiritstorm.github.io
+		  publish_branch: master
+		  publish_dir: ./public
+		  commit_message: ${{ github.event.head_commit.message }}
+		  # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+		  TZ: Asia/Taipei
+&lt;/code&gt;&lt;/pre&gt;
+&lt;hr&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;[2] 難點2:&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;當初不知道那個「secrets.後面這串」是要填剛剛在 secret 產生的 token 的名稱。&lt;/p&gt;
+&lt;p&gt;就在 Action 的 Deploy 裡面遇到錯誤。&lt;/p&gt;
+&lt;p&gt;Error: Action failed with &amp;ldquo;not found deploy key or tokens&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://starspiritstorm.github.io/images/establish-hugo-site-on-githubpage/fig002.not_found_deploy_key_or_tokens.png&#34; alt=&#34;fig002&#34; title=&#34;Fig002. not found deploy key or tokens&#34;&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;[3] 難點3:&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;這邊原本我複製 Github Pages 的時候多複製到了.git，變成 starspiritstorm/starspiritstorm.github.io.git。&lt;/p&gt;
+&lt;p&gt;結果就在 Action 的 Deploy 裡面遇到錯誤。&lt;/p&gt;
+&lt;p&gt;remote: Repository not found.&lt;/p&gt;
+&lt;p&gt;fatal: repository &amp;lsquo;&lt;a href=&#34;https://github.com/starspiritstorm/starspiritstorm.github.io.git.git/&#39;&#34;&gt;https://github.com/starspiritstorm/starspiritstorm.github.io.git.git/&#39;&lt;/a&gt; not found&lt;/p&gt;
+&lt;p&gt;Error: Action failed with &amp;ldquo;The process &amp;lsquo;/usr/bin/git&amp;rsquo; failed with exit code 128&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://starspiritstorm.github.io/images/establish-hugo-site-on-githubpage/fig003.repository_not_found.png&#34; alt=&#34;fig003&#34; title=&#34;Fig003. repository not found&#34;&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;p&gt;最後看到 source code 的 Action 畫面成功地顯示 build 綠勾勾，就代表你成功的建立好流程了。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://starspiritstorm.github.io/images/establish-hugo-site-on-githubpage/fig40.workflow_finished.png&#34; alt=&#34;fig40&#34; title=&#34;Fig40. workflow finished&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://starspiritstorm.github.io/images/establish-hugo-site-on-githubpage/fig41.build_sucess.png&#34; alt=&#34;fig41&#34; title=&#34;Fig41. build sucess&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;自動化部屬測試&#34;&gt;自動化部屬測試&lt;/h2&gt;
+&lt;p&gt;之後只需要在 source code 的 repository 新增 post 就會自動更新到 Github Pages 上了。&lt;/p&gt;
+&lt;p&gt;一樣在 myblog 資料夾開 Git Bash，然後 hugo new 一個 post。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://starspiritstorm.github.io/images/establish-hugo-site-on-githubpage/fig44.new_post.png&#34; alt=&#34;fig44&#34; title=&#34;Fig44. new post&#34;&gt;&lt;/p&gt;
+&lt;p&gt;然後 commit 之後 push 到 origin，再去 Action 看，可以看到成功的內容。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://starspiritstorm.github.io/images/establish-hugo-site-on-githubpage/fig45.auto_deploy.png&#34; alt=&#34;fig45&#34; title=&#34;Fig45. auto deploy&#34;&gt;&lt;/p&gt;
+&lt;p&gt;然後可以再去你的 Github Pages 看看剛剛新增的 post。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://starspiritstorm.github.io/images/establish-hugo-site-on-githubpage/fig46.deployed_post1.png&#34; alt=&#34;fig46&#34; title=&#34;Fig46. deployed_post1&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://starspiritstorm.github.io/images/establish-hugo-site-on-githubpage/fig47.deployed_post2.png&#34; alt=&#34;fig47&#34; title=&#34;Fig47. deployed_post2&#34;&gt;&lt;/p&gt;
+&lt;p&gt;最後一個要注意的就是當初 config.toml 是直接複製範本過來用的，所以裡面有一些資訊要記得做修正。
+請參考&lt;a href=&#34;https://starspiritstorm.github.io/en/posts/setting-config.toml/&#34;&gt;下篇文章&lt;/a&gt;。&lt;/p&gt;
+&lt;h2 id=&#34;reference&#34;&gt;Reference&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/reuixiy/hugo-theme-meme&#34;&gt;theme meme 作者 reuixiy 的安裝教學&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://io-oi.me/tech/deploy-hugo-to-github-pages-via-github-actions/&#34;&gt;theme meme 的作者寫的「使用 GitHub Actions 部署 Hugo 博客到 GitHub Pages」&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Github Action 的參考，不能完全照抄，會失敗&amp;hellip;，組合起來嘗試才成功的&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.mytechramblings.com/posts/create-a-website-with-hugo-and-gh/&#34;&gt;Create and host a blog with Hugo and GitHub Pages in less than 30 minutes&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://yurepo.tw/2021/03/%E5%A6%82%E4%BD%95%E5%B0%87hugo%E9%83%A8%E8%90%BD%E6%A0%BC%E9%83%A8%E7%BD%B2%E5%88%B0github%E4%B8%8A/&#34;&gt;如何將Hugo部落格部署到Github上?&lt;/a&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;section class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;p&gt;難點1：Github Action 需要 submodule 裡面有 public 才能正常作業&amp;hellip;不然會在 Github Action 時運作時，在 Run actions/checkout@v2 遇到 Error: fatal: No url found for submodule path &amp;lsquo;public&amp;rsquo; in .gitmodules。
+&lt;img src=&#34;https://starspiritstorm.github.io/images/establish-hugo-site-on-githubpage/fig001.submodule_error.png&#34; alt=&#34;fig001&#34; title=&#34;Fig001. submodule error&#34;&gt;&amp;#160;&lt;a href=&#34;https://starspiritstorm.github.io/zh-tw/posts/establish-hugo-site-on-githubpage/#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/section&gt;</description>
+                
+                
+                
+                
+                
+                    
+                        
+                            
+                                
+                                
+                                
+                                    <category domain="https://starspiritstorm.github.io/zh-tw/categories/hugo/">hugo</category>
+                                
+                            
+                        
+                    
+                        
+                            
+                                
+                                
+                                
+                                    <category domain="https://starspiritstorm.github.io/zh-tw/tags/hugo/">hugo</category>
+                                
+                            
+                                
+                                
+                                
+                                    <category domain="https://starspiritstorm.github.io/zh-tw/tags/theme-meme/">theme-meme</category>
+                                
+                            
+                                
+                                
+                                
+                                    <category domain="https://starspiritstorm.github.io/zh-tw/tags/blog/">blog</category>
+                                
+                            
+                                
+                                
+                                
+                                    <category domain="https://starspiritstorm.github.io/zh-tw/tags/github/">github</category>
+                                
+                            
+                                
+                                
+                                
+                                    <category domain="https://starspiritstorm.github.io/zh-tw/tags/github-pages/">github pages</category>
+                                
+                            
+                                
+                                
+                                
+                                    <category domain="https://starspiritstorm.github.io/zh-tw/tags/github-action/">github action</category>
+                                
+                            
+                        
+                    
+                
+            </item>
         
             <item>
                 <title>在 Windows 環境下安裝 Hugo</title>
