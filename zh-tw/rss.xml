@@ -23,10 +23,104 @@
         
             <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</copyright>
         
-        <lastBuildDate>Mon, 28 Mar 2022 07:02:39 &#43;0000</lastBuildDate>
+        <lastBuildDate>Mon, 28 Mar 2022 07:37:04 &#43;0000</lastBuildDate>
         
             <atom:link rel="self" type="application/rss&#43;xml" href="https://starspiritstorm.github.io/zh-tw/rss.xml" />
         
+        
+            <item>
+                <title>Setting config.toml</title>
+                <link>https://starspiritstorm.github.io/zh-tw/posts/setting-config.toml/</link>
+                <guid isPermaLink="true">https://starspiritstorm.github.io/zh-tw/posts/setting-config.toml/</guid>
+                <pubDate>Mon, 28 Mar 2022 12:00:00 &#43;0800</pubDate>
+                
+                    <author>starspiritstorm@gmail.com (starspiritstorm)</author>
+                
+                <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</copyright>
+                
+                    <description>&lt;p&gt;Config.toml 設定教學。&lt;/p&gt;
+&lt;h2 id=&#34;configtoml-setting&#34;&gt;Config.toml setting&lt;/h2&gt;
+&lt;h3 id=&#34;modified-date&#34;&gt;Modified date&lt;/h3&gt;
+&lt;p&gt;找到 # Modified date&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;[frontmatter]
+	lastmod = [&amp;quot;lastmod&amp;quot;, &amp;quot;:git&amp;quot;, &amp;quot;:fileModTime&amp;quot;, &amp;quot;:default&amp;quot;]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://starspiritstorm.github.io/images/setting_config.toml/fig01.modified_date1.png&#34; alt=&#34;fig01&#34; title=&#34;Fig1. modified date1&#34;&gt;&lt;/p&gt;
+&lt;p&gt;修改成&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;[frontmatter]
+	date = [&#39;date&#39;, &#39;publishDate&#39;, &#39;lastmod&#39;]
+	expiryDate = [&#39;expiryDate&#39;]
+	lastmod = [&amp;quot;lastmod&amp;quot;, &amp;quot;:fileModTime&amp;quot;, &amp;quot;:git&amp;quot;, &amp;quot;:default&amp;quot;]
+	publishDate = [&#39;publishDate&#39;, &#39;date&#39;]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://starspiritstorm.github.io/images/setting_config.toml/fig02.modified_date2.png&#34; alt=&#34;fig02&#34; title=&#34;Fig2. modified date2&#34;&gt;&lt;/p&gt;
+&lt;p&gt;原本給的設定順序是 [&amp;ldquo;lastmod&amp;rdquo;, &amp;ldquo;:git&amp;rdquo;, &amp;ldquo;:fileModTime&amp;rdquo;, &amp;ldquo;:default&amp;rdquo;]，&lt;/p&gt;
+&lt;p&gt;這邊調整成 [&amp;ldquo;lastmod&amp;rdquo;, &amp;ldquo;:fileModTime&amp;rdquo;, &amp;ldquo;:git&amp;rdquo;, &amp;ldquo;:default&amp;rdquo;]。&lt;/p&gt;
+&lt;h3 id=&#34;authors-information&#34;&gt;Author’s information&lt;/h3&gt;
+&lt;p&gt;找到 # Author’s information&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://starspiritstorm.github.io/images/setting_config.toml/fig03.author%E2%80%99s_information.png&#34; alt=&#34;fig03&#34; title=&#34;Fig3. author’s information&#34;&gt;&lt;/p&gt;
+&lt;p&gt;調整成你自己的內容&lt;/p&gt;
+&lt;h3 id=&#34;site-info&#34;&gt;Site Info&lt;/h3&gt;
+&lt;p&gt;找到 # Site Info&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://starspiritstorm.github.io/images/setting_config.toml/fig04.site_info.png&#34; alt=&#34;fig04&#34; title=&#34;Fig4. site info&#34;&gt;&lt;/p&gt;
+&lt;p&gt;調整成你自己的內容&lt;/p&gt;
+&lt;h3 id=&#34;post-share&#34;&gt;Post Share&lt;/h3&gt;
+&lt;p&gt;找到 # Post Share&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://starspiritstorm.github.io/images/setting_config.toml/fig05.post_share.png&#34; alt=&#34;fig05&#34; title=&#34;Fig5. site info&#34;&gt;&lt;/p&gt;
+&lt;p&gt;調整成想要 share 的連結&lt;/p&gt;
+&lt;h3 id=&#34;footer-icon-url-changing&#34;&gt;Footer icon url changing&lt;/h3&gt;
+&lt;p&gt;最後就是 footer 的圖要換連結&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://starspiritstorm.github.io/images/setting_config.toml/fig06.footer_icon1.png&#34; alt=&#34;fig06&#34; title=&#34;Fig6. footer icon1&#34;&gt;
+&lt;img src=&#34;https://starspiritstorm.github.io/images/setting_config.toml/fig07.footer_icon2.png&#34; alt=&#34;fig07&#34; title=&#34;Fig7. footer icon2&#34;&gt;&lt;/p&gt;
+&lt;p&gt;找到 theme/meme/data 裡面的 Socials.toml&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://starspiritstorm.github.io/images/setting_config.toml/fig08.footer_icon3.png&#34; alt=&#34;fig08&#34; title=&#34;Fig8. footer icon3&#34;&gt;
+&lt;img src=&#34;https://starspiritstorm.github.io/images/setting_config.toml/fig09.footer_icon4.png&#34; alt=&#34;fig09&#34; title=&#34;Fig9. footer icon4&#34;&gt;&lt;/p&gt;
+&lt;p&gt;複製一份到你的 myblog/data&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://starspiritstorm.github.io/images/setting_config.toml/fig10.footer_icon5.png&#34; alt=&#34;fig10&#34; title=&#34;Fig10. footer icon5&#34;&gt;&lt;/p&gt;
+&lt;p&gt;並修改連結改為你自己的相關的連結&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://starspiritstorm.github.io/images/setting_config.toml/fig11.footer_icon6.png&#34; alt=&#34;fig11&#34; title=&#34;Fig11. footer icon6&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;reference&#34;&gt;Reference&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://gohugo.io/getting-started/configuration/&#34;&gt;Hugo setting configuration&lt;/a&gt;&lt;/p&gt;</description>
+                
+                
+                
+                
+                
+                    
+                        
+                            
+                                
+                                
+                                
+                                    <category domain="https://starspiritstorm.github.io/zh-tw/categories/hugo/">hugo</category>
+                                
+                            
+                        
+                    
+                        
+                            
+                                
+                                
+                                
+                                    <category domain="https://starspiritstorm.github.io/zh-tw/tags/hugo/">hugo</category>
+                                
+                            
+                                
+                                
+                                
+                                    <category domain="https://starspiritstorm.github.io/zh-tw/tags/theme-meme/">theme-meme</category>
+                                
+                            
+                                
+                                
+                                
+                                    <category domain="https://starspiritstorm.github.io/zh-tw/tags/config.toml/">config.toml</category>
+                                
+                            
+                        
+                    
+                
+            </item>
         
             <item>
                 <title>在 Github Pages 上建立 Hugo</title>
