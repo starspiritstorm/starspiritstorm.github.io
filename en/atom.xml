@@ -4,7 +4,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
     <title type="text">starspiritstorm</title>
     <subtitle type="html">starspiritstorm personal blogs.</subtitle>
-    <updated>2022-03-28T07:37:04&#43;00:00</updated>
+    <updated>2022-03-31T06:48:46&#43;00:00</updated>
     <id>https://starspiritstorm.github.io/en/</id>
     <link rel="alternate" type="text/html" href="https://starspiritstorm.github.io/en/" />
     <link rel="self" type="application/atom&#43;xml" href="https://starspiritstorm.github.io/en/atom.xml" />
@@ -17,10 +17,171 @@
     <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</rights>
     <generator uri="https://gohugo.io/" version="0.96.0">Hugo</generator>
         <entry>
+            <title type="text">MSSQL - Get continuous sequenced start of month and end of month from a date range</title>
+            <link rel="alternate" type="text/html" href="https://starspiritstorm.github.io/en/posts/mssql-get-continuous-sequenced-start-of-month-and-end-of-month-from-a-date-range/" />
+            <id>https://starspiritstorm.github.io/en/posts/mssql-get-continuous-sequenced-start-of-month-and-end-of-month-from-a-date-range/</id>
+            <updated>2022-03-31T06:48:42&#43;00:00</updated>
+            <published>2022-03-31T12:00:00&#43;08:00</published>
+            <author>
+                    <name>starspiritstorm</name>
+                    <uri>https://starspiritstorm.github.io/en/</uri>
+                    <email>starspiritstorm@gmail.com</email>
+                    </author>
+            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</rights><summary type="html">&lt;p&gt;A Function of generating continuous sequenced start of month and end of month from a date range.&lt;/p&gt;</summary>
+            
+                <content type="html">&lt;p&gt;A Function of generating continuous sequenced start of month and end of month from a date range.&lt;/p&gt;
+&lt;p&gt;Code below here.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;/*
+=============================================
+Author:	starspiritstorm
+Create date: 2021-08-17
+Description: A Function of generating continuous sequenced start of month and end of month from a date range 
+
+Reference: 
+https://stackoverflow.com/questions/21189369/better-way-to-generate-months-year-table
+https://stackoverflow.com/questions/1520789/how-can-i-select-the-first-day-of-a-month-in-sql?page=1&amp;amp;tab=votes#tab-top
+https://stackoverflow.com/questions/1051488/get-the-last-day-of-the-month-in-sql
+
+CTE version
+https://stackoverflow.com/questions/33510077/sql-split-period-by-months
+
+=============================================
+*/
+
+CREATE FUNCTION [dbo].[F_Get_Sequenced_MonthStart_And_MonthEnd]
+(
+	  @FromDate DATETIME
+	, @ToDate DATETIME
+	, @UpdateBeginDate BIT
+	, @UpdateEndDate BIT
+)
+RETURNS @Results TABLE 
+( 
+	  MonthStart DATETIME
+	, MonthEnd DATETIME 
+	, TheMonth VARCHAR(2) 
+	, TheYear VARCHAR(4)
+)
+AS
+BEGIN
+
+	 -- Months in that period
+	 INSERT INTO @Results
+	 SELECT TOP (DATEDIFF(MONTH, @FromDate, @ToDate)+1) -- calculate how many rows needed
+			  DATEADD(MONTH, number, @FromDate)
+			, DATEADD(MONTH, number, @FromDate)
+			, MONTH(DATEADD(MONTH, number, @FromDate))
+			, YEAR(DATEADD(MONTH, number, @FromDate))
+	   FROM [master].dbo.spt_values 
+	  WHERE [type] = N&#39;P&#39; 
+	  ORDER BY number
+
+	 /*
+		 by using [master].dbo.spt_values, the total series number are 2048 (0~2047), 
+		 for month cases, there will be 2048/12 ≈ 170 year range
+	 */
+
+	 -- Update first date of month and last date of month for each row
+	 UPDATE @Results
+		SET MonthStart = DATEADD(MONTH, DATEDIFF(MONTH, 0, MonthStart), 0) 
+		  , MonthEnd = DATEADD(MONTH, ((YEAR(MonthEnd) - 1900) * 12) + MONTH(MonthEnd), -1)
+	 
+	 /*
+		 MonthStart
+		 Caculate the month difference from 1900-01-01 (0 represent 1900-01-01) to the current row&#39;s MonthStart record (DATEDIFF part)
+		 Then add the month difference from 1900-01-01 (DATEADD part)
+	   
+		 MonthEnd
+		 Caculate the year difference from 1900 to the current row&#39;s MonthEnd record then multiply 12 and plus the months of the record (The middle part)
+		 Then add the month difference from 1899-12-31 (DATEADD part)
+		 NOTE: -1 means 1899-12-31
+		 
+		 The MonthEnd sentence is equivalent to this, if you keeped the record of TheYear and TheMonth
+		 MonthEnd = DATEADD(MONTH, ((TheYear - 1900) * 12) + TheMonth, -1)
+			
+		 Or you can just write like this, but I don&#39;t really like those plus 1
+		 MonthEnd = DATEADD(MONTH, DATEDIFF(MONTH, 0, MonthEnd) + 1, -1)
+	 */
+
+	 IF @UpdateBeginDate = 1
+	 BEGIN
+		 UPDATE @Results 
+			SET MonthStart = @FromDate
+		  WHERE MonthStart = (SELECT MIN(MonthStart) FROM @Results)
+	 END
+
+
+	 IF @UpdateEndDate = 1
+	 BEGIN
+		 UPDATE @Results 
+			SET MonthEnd = @ToDate
+		  WHERE MonthEnd = (SELECT MAX(MonthEnd) FROM @Results)
+	 END
+
+
+	 RETURN
+
+END
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;a href=&#34;https://dbfiddle.uk/?rdbms=sqlserver_2017&amp;amp;fiddle=167dd389fec46d8897cdd626e3f3631a&#34;&gt;Here&amp;rsquo;s the testing result&lt;/a&gt;&lt;/p&gt;</content>
+            
+            
+            
+            
+            
+                
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://starspiritstorm.github.io/en/categories/mssql/" term="MSSQL" label="MSSQL" />
+                            
+                        
+                    
+                
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://starspiritstorm.github.io/en/tags/mssql/" term="MSSQL" label="MSSQL" />
+                            
+                        
+                            
+                            
+                            
+                                <category scheme="https://starspiritstorm.github.io/en/tags/function/" term="Function" label="Function" />
+                            
+                        
+                            
+                            
+                            
+                                <category scheme="https://starspiritstorm.github.io/en/tags/mssql-2008/" term="MSSQL 2008" label="MSSQL 2008" />
+                            
+                        
+                            
+                            
+                            
+                                <category scheme="https://starspiritstorm.github.io/en/tags/mssql-2017/" term="MSSQL 2017" label="MSSQL 2017" />
+                            
+                        
+                            
+                            
+                            
+                                <category scheme="https://starspiritstorm.github.io/en/tags/monthly-date/" term="Monthly date" label="Monthly date" />
+                            
+                        
+                    
+                
+            
+        </entry>
+    
+        <entry>
             <title type="text">Setting config.toml</title>
             <link rel="alternate" type="text/html" href="https://starspiritstorm.github.io/en/posts/setting-config.toml/" />
             <id>https://starspiritstorm.github.io/en/posts/setting-config.toml/</id>
-            <updated>2022-03-28T07:37:00&#43;00:00</updated>
+            <updated>2022-03-31T06:48:42&#43;00:00</updated>
             <published>2022-03-28T12:00:00&#43;08:00</published>
             <author>
                     <name>starspiritstorm</name>
@@ -117,7 +278,7 @@
             <title type="text">Establish Hugo Site on GithubPage</title>
             <link rel="alternate" type="text/html" href="https://starspiritstorm.github.io/en/posts/establish-hugo-site-on-githubpage/" />
             <id>https://starspiritstorm.github.io/en/posts/establish-hugo-site-on-githubpage/</id>
-            <updated>2022-03-28T07:37:00&#43;00:00</updated>
+            <updated>2022-03-31T06:48:42&#43;00:00</updated>
             <published>2022-03-18T12:00:00&#43;08:00</published>
             <author>
                     <name>starspiritstorm</name>
@@ -433,7 +594,7 @@ Check &lt;a href=&#34;https://starspiritstorm.github.io/en/posts/setting-config.
             <title type="text">Install Hugo in Windows</title>
             <link rel="alternate" type="text/html" href="https://starspiritstorm.github.io/en/posts/install-hugo-in-windows/" />
             <id>https://starspiritstorm.github.io/en/posts/install-hugo-in-windows/</id>
-            <updated>2022-03-28T07:37:00&#43;00:00</updated>
+            <updated>2022-03-31T06:48:42&#43;00:00</updated>
             <published>2022-03-15T08:00:00&#43;08:00</published>
             <author>
                     <name>starspiritstorm</name>
@@ -501,7 +662,7 @@ Check &lt;a href=&#34;https://starspiritstorm.github.io/en/posts/setting-config.
             <title type="text">Uninstall Chocolatey in Windows</title>
             <link rel="alternate" type="text/html" href="https://starspiritstorm.github.io/en/posts/uninstall-chocolatey-in-windows/" />
             <id>https://starspiritstorm.github.io/en/posts/uninstall-chocolatey-in-windows/</id>
-            <updated>2022-03-28T07:37:00&#43;00:00</updated>
+            <updated>2022-03-31T06:48:42&#43;00:00</updated>
             <published>2021-12-21T16:20:52&#43;08:00</published>
             <author>
                     <name>starspiritstorm</name>
@@ -570,7 +731,7 @@ Check &lt;a href=&#34;https://starspiritstorm.github.io/en/posts/setting-config.
             <title type="text">Install Chocolatey in Windows</title>
             <link rel="alternate" type="text/html" href="https://starspiritstorm.github.io/en/posts/install-chocolatey-in-windows/" />
             <id>https://starspiritstorm.github.io/en/posts/install-chocolatey-in-windows/</id>
-            <updated>2022-03-28T07:37:00&#43;00:00</updated>
+            <updated>2022-03-31T06:48:42&#43;00:00</updated>
             <published>2021-12-21T14:53:55&#43;08:00</published>
             <author>
                     <name>starspiritstorm</name>
@@ -645,7 +806,7 @@ Check &lt;a href=&#34;https://starspiritstorm.github.io/en/posts/setting-config.
             <title type="text">Post pushed to source code repo and auto published via GitHub Action</title>
             <link rel="alternate" type="text/html" href="https://starspiritstorm.github.io/en/posts/auto-post-with-github-action/" />
             <id>https://starspiritstorm.github.io/en/posts/auto-post-with-github-action/</id>
-            <updated>2022-03-28T07:37:00&#43;00:00</updated>
+            <updated>2022-03-31T06:48:42&#43;00:00</updated>
             <published>2021-10-13T15:50:47&#43;08:00</published>
             <author>
                     <name>starspiritstorm</name>
@@ -674,7 +835,7 @@ Pushed in source code repo, and auto deploy to the GitHub Pages repo.&lt;/p&gt;
             <title type="text">Hello World</title>
             <link rel="alternate" type="text/html" href="https://starspiritstorm.github.io/en/posts/hello-world/" />
             <id>https://starspiritstorm.github.io/en/posts/hello-world/</id>
-            <updated>2022-03-28T07:37:00&#43;00:00</updated>
+            <updated>2022-03-31T06:48:42&#43;00:00</updated>
             <published>2021-10-13T15:08:25&#43;08:00</published>
             <author>
                     <name>starspiritstorm</name>

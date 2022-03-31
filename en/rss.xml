@@ -23,10 +23,168 @@
         
             <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</copyright>
         
-        <lastBuildDate>Mon, 28 Mar 2022 07:37:04 &#43;0000</lastBuildDate>
+        <lastBuildDate>Thu, 31 Mar 2022 06:48:46 &#43;0000</lastBuildDate>
         
             <atom:link rel="self" type="application/rss&#43;xml" href="https://starspiritstorm.github.io/en/rss.xml" />
         
+        
+            <item>
+                <title>MSSQL - Get continuous sequenced start of month and end of month from a date range</title>
+                <link>https://starspiritstorm.github.io/en/posts/mssql-get-continuous-sequenced-start-of-month-and-end-of-month-from-a-date-range/</link>
+                <guid isPermaLink="true">https://starspiritstorm.github.io/en/posts/mssql-get-continuous-sequenced-start-of-month-and-end-of-month-from-a-date-range/</guid>
+                <pubDate>Thu, 31 Mar 2022 12:00:00 &#43;0800</pubDate>
+                
+                    <author>starspiritstorm@gmail.com (starspiritstorm)</author>
+                
+                <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</copyright>
+                
+                    <description>&lt;p&gt;A Function of generating continuous sequenced start of month and end of month from a date range.&lt;/p&gt;
+&lt;p&gt;Code below here.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;/*
+=============================================
+Author:	starspiritstorm
+Create date: 2021-08-17
+Description: A Function of generating continuous sequenced start of month and end of month from a date range 
+
+Reference: 
+https://stackoverflow.com/questions/21189369/better-way-to-generate-months-year-table
+https://stackoverflow.com/questions/1520789/how-can-i-select-the-first-day-of-a-month-in-sql?page=1&amp;amp;tab=votes#tab-top
+https://stackoverflow.com/questions/1051488/get-the-last-day-of-the-month-in-sql
+
+CTE version
+https://stackoverflow.com/questions/33510077/sql-split-period-by-months
+
+=============================================
+*/
+
+CREATE FUNCTION [dbo].[F_Get_Sequenced_MonthStart_And_MonthEnd]
+(
+	  @FromDate DATETIME
+	, @ToDate DATETIME
+	, @UpdateBeginDate BIT
+	, @UpdateEndDate BIT
+)
+RETURNS @Results TABLE 
+( 
+	  MonthStart DATETIME
+	, MonthEnd DATETIME 
+	, TheMonth VARCHAR(2) 
+	, TheYear VARCHAR(4)
+)
+AS
+BEGIN
+
+	 -- Months in that period
+	 INSERT INTO @Results
+	 SELECT TOP (DATEDIFF(MONTH, @FromDate, @ToDate)+1) -- calculate how many rows needed
+			  DATEADD(MONTH, number, @FromDate)
+			, DATEADD(MONTH, number, @FromDate)
+			, MONTH(DATEADD(MONTH, number, @FromDate))
+			, YEAR(DATEADD(MONTH, number, @FromDate))
+	   FROM [master].dbo.spt_values 
+	  WHERE [type] = N&#39;P&#39; 
+	  ORDER BY number
+
+	 /*
+		 by using [master].dbo.spt_values, the total series number are 2048 (0~2047), 
+		 for month cases, there will be 2048/12 ≈ 170 year range
+	 */
+
+	 -- Update first date of month and last date of month for each row
+	 UPDATE @Results
+		SET MonthStart = DATEADD(MONTH, DATEDIFF(MONTH, 0, MonthStart), 0) 
+		  , MonthEnd = DATEADD(MONTH, ((YEAR(MonthEnd) - 1900) * 12) + MONTH(MonthEnd), -1)
+	 
+	 /*
+		 MonthStart
+		 Caculate the month difference from 1900-01-01 (0 represent 1900-01-01) to the current row&#39;s MonthStart record (DATEDIFF part)
+		 Then add the month difference from 1900-01-01 (DATEADD part)
+	   
+		 MonthEnd
+		 Caculate the year difference from 1900 to the current row&#39;s MonthEnd record then multiply 12 and plus the months of the record (The middle part)
+		 Then add the month difference from 1899-12-31 (DATEADD part)
+		 NOTE: -1 means 1899-12-31
+		 
+		 The MonthEnd sentence is equivalent to this, if you keeped the record of TheYear and TheMonth
+		 MonthEnd = DATEADD(MONTH, ((TheYear - 1900) * 12) + TheMonth, -1)
+			
+		 Or you can just write like this, but I don&#39;t really like those plus 1
+		 MonthEnd = DATEADD(MONTH, DATEDIFF(MONTH, 0, MonthEnd) + 1, -1)
+	 */
+
+	 IF @UpdateBeginDate = 1
+	 BEGIN
+		 UPDATE @Results 
+			SET MonthStart = @FromDate
+		  WHERE MonthStart = (SELECT MIN(MonthStart) FROM @Results)
+	 END
+
+
+	 IF @UpdateEndDate = 1
+	 BEGIN
+		 UPDATE @Results 
+			SET MonthEnd = @ToDate
+		  WHERE MonthEnd = (SELECT MAX(MonthEnd) FROM @Results)
+	 END
+
+
+	 RETURN
+
+END
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;a href=&#34;https://dbfiddle.uk/?rdbms=sqlserver_2017&amp;amp;fiddle=167dd389fec46d8897cdd626e3f3631a&#34;&gt;Here&amp;rsquo;s the testing result&lt;/a&gt;&lt;/p&gt;</description>
+                
+                
+                
+                
+                
+                    
+                        
+                            
+                                
+                                
+                                
+                                    <category domain="https://starspiritstorm.github.io/en/categories/mssql/">MSSQL</category>
+                                
+                            
+                        
+                    
+                        
+                            
+                                
+                                
+                                
+                                    <category domain="https://starspiritstorm.github.io/en/tags/mssql/">MSSQL</category>
+                                
+                            
+                                
+                                
+                                
+                                    <category domain="https://starspiritstorm.github.io/en/tags/function/">Function</category>
+                                
+                            
+                                
+                                
+                                
+                                    <category domain="https://starspiritstorm.github.io/en/tags/mssql-2008/">MSSQL 2008</category>
+                                
+                            
+                                
+                                
+                                
+                                    <category domain="https://starspiritstorm.github.io/en/tags/mssql-2017/">MSSQL 2017</category>
+                                
+                            
+                                
+                                
+                                
+                                    <category domain="https://starspiritstorm.github.io/en/tags/monthly-date/">Monthly date</category>
+                                
+                            
+                        
+                    
+                
+            </item>
         
             <item>
                 <title>Setting config.toml</title>
