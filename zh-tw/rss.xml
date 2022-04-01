@@ -23,10 +23,180 @@
         
             <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</copyright>
         
-        <lastBuildDate>Fri, 01 Apr 2022 09:09:56 &#43;0000</lastBuildDate>
+        <lastBuildDate>Fri, 01 Apr 2022 10:02:18 &#43;0000</lastBuildDate>
         
             <atom:link rel="self" type="application/rss&#43;xml" href="https://starspiritstorm.github.io/zh-tw/rss.xml" />
         
+        
+            <item>
+                <title>MSSQL - 多筆 row 字串連接</title>
+                <link>https://starspiritstorm.github.io/zh-tw/posts/mssql-string-concatenate/</link>
+                <guid isPermaLink="true">https://starspiritstorm.github.io/zh-tw/posts/mssql-string-concatenate/</guid>
+                <pubDate>Fri, 01 Apr 2022 12:00:00 &#43;0800</pubDate>
+                
+                    <author>starspiritstorm@gmail.com (starspiritstorm)</author>
+                
+                <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</copyright>
+                
+                    <description>&lt;p&gt;多筆 row 字串連接。&lt;/p&gt;
+&lt;p&gt;我是用下面的關鍵字去 google 的&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;SQL string Concatenate 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;3種&lt;a href=&#34;https://www.mytecbits.com/microsoft/sql-server/concatenate-multiple-rows-into-single-string&#34;&gt;方法&lt;/a&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;for xml path&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;COALESCE&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;STRING_AGG&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;用 for xml path 遇到特殊字元的處理&lt;a href=&#34;https://blogs.lobsterpot.com.au/2010/04/15/handling-special-characters-with-for-xml-path/&#34;&gt;方式&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;中文的 for xml path 的參考，&lt;a href=&#34;https://coolmandiary.blogspot.com/2020/11/t-sql12for-xml-path-stuffrowrow.html&#34;&gt;如何透過for xml path 搭配STUFF將多ROW資料合併同一ROW&lt;/a&gt;，
+以及&lt;a href=&#34;https://dotblogs.com.tw/supershowwei/2016/01/26/145353&#34;&gt;食譜好菜 SQL Server 使用「FOR XML」語法做欄位合併&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;還有 performance 的比較&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://blog.darkthread.net/blog/col-merge-benchmark&#34;&gt;for xml path vs CTE&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;for xml path vs STRING_AGG&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://sqlperformance.com/2016/12/sql-performance/sql-server-v-next-string_agg-performance&#34;&gt;sql-server-v-next-string_agg-performance&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://sqlperformance.com/2017/01/sql-performance/sql-server-v-next-string_agg-performance-part-2&#34;&gt;sql-server-v-next-string_agg-performance&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;結論，MSSQL 2017 之後版本的人就乖乖用 STRING_AGG 吧..&lt;/p&gt;
+&lt;h2 id=&#34;xml-path-方法連接-strings&#34;&gt;XML PATH 方法連接 strings&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;DECLARE @temp_origin TABLE
+(
+	ID INT
+  , input_date DATETIME
+  , name VARCHAR(50)
+) 
+-- a sample temp table
+INSERT INTO @temp_origin
+SELECT 1, &#39;2021-05-05&#39;, &#39;Adam%&#39;
+ UNION
+SELECT 1, &#39;2021-05-05&#39;, &#39;Gray&amp;amp;&#39;
+ UNION
+SELECT 1, &#39;2021-05-05&#39;, &#39;Jacy&#39;
+ UNION
+SELECT 2, &#39;2021-05-08&#39;, &#39;Henry&#39;
+ UNION
+SELECT 2, &#39;2021-05-08&#39;, &#39;Alice&#39;
+ UNION
+SELECT 3, &#39;2021-05-15&#39;, &#39;Ben&#39;
+
+
+
+-- xml path method
+SELECT DISTINCT 
+	   temp.ID
+	 , input_date
+	 , inner_concatenate_name
+  FROM @temp_origin AS temp
+ OUTER APPLY (SELECT DISTINCT ID 
+		   , STUFF((SELECT &#39;,&#39; + name
+				  FROM @temp_origin AS inner_list
+				 WHERE inner_list.ID = outer_list.ID 
+				   for xml path(&#39;&#39;), root(&#39;MyString&#39;), type
+				).value(&#39;/MyString[1]&#39;,&#39;varchar(max)&#39;)
+			  ,1,1,&#39;&#39;) AS inner_concatenate_name
+		   FROM @temp_origin AS outer_list
+		 ) AS T
+ WHERE temp.ID = T.ID
+
+
+/*
+-- 如果不明白 xml path 怎麼運作的，可以把這塊註解拿掉看一下OUTPUT
+
+SELECT DISTINCT ID 
+	 , STUFF((SELECT &#39;,&#39; + name
+				FROM @temp_origin AS inner_list
+			   WHERE inner_list.ID = outer_list.ID 
+			   for xml path(&#39;&#39;), root(&#39;MyString&#39;), type
+			 ).value(&#39;/MyString[1]&#39;,&#39;varchar(max)&#39;)
+			,1,1,&#39;&#39;) AS inner_concatenate_name
+  FROM @temp_origin AS outer_list
+
+*/
+&lt;/code&gt;&lt;/pre&gt;
+&lt;blockquote&gt;
+&lt;p&gt;NOTE: 這塊是在處理 &amp;ldquo;&amp;amp;&amp;rdquo; 之類的特殊字元。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;                         , root(&#39;MyString&#39;), type
+).value(&#39;/MyString[1]&#39;,&#39;varchar(max)&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;如果你沒加這塊，&amp;quot;&amp;amp;&amp;quot; 在 XML path 轉換過後會變成 &amp;ldquo;&amp;amp;&amp;rdquo;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;coalesce-方法連接-strings&#34;&gt;COALESCE 方法連接 strings&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;/*
+-- COALESCE 方法沒辦法一個 SELECT 搞定，所以就不用了
+DECLARE @val Varchar(MAX); 
+
+SELECT @val = COALESCE(@val + &#39;, &#39; + name, name) 
+  FROM @temp_origin 
+  
+SELECT @val;
+*/
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;string_agg-方法連接-strings&#34;&gt;STRING_AGG 方法連接 strings&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;-- STRING_AGG method
+SELECT ID
+	 , input_date
+	 , STRING_AGG( ISNULL(name, &#39; &#39;), &#39;,&#39;) As name 
+  From @temp_origin
+ GROUP BY ID, input_date
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;a href=&#34;https://dbfiddle.uk/?rdbms=sqlserver_2017&amp;amp;fiddle=bfc3fb737203a5b7e23f0aaa9bf4423b&#34;&gt;測試結果&lt;/a&gt;&lt;/p&gt;</description>
+                
+                
+                
+                
+                
+                    
+                        
+                            
+                                
+                                
+                                
+                                    <category domain="https://starspiritstorm.github.io/zh-tw/categories/mssql/">MSSQL</category>
+                                
+                            
+                        
+                    
+                        
+                            
+                                
+                                
+                                
+                                    <category domain="https://starspiritstorm.github.io/zh-tw/tags/mssql/">MSSQL</category>
+                                
+                            
+                                
+                                
+                                
+                                    <category domain="https://starspiritstorm.github.io/zh-tw/tags/function/">Function</category>
+                                
+                            
+                                
+                                
+                                
+                                    <category domain="https://starspiritstorm.github.io/zh-tw/tags/mssql-2008/">MSSQL 2008</category>
+                                
+                            
+                                
+                                
+                                
+                                    <category domain="https://starspiritstorm.github.io/zh-tw/tags/mssql-2017/">MSSQL 2017</category>
+                                
+                            
+                                
+                                
+                                
+                                    <category domain="https://starspiritstorm.github.io/zh-tw/tags/concatenate-string/">Concatenate string</category>
+                                
+                            
+                        
+                    
+                
+            </item>
         
             <item>
                 <title>MSSQL - 拆分分隔符號變成多筆row</title>

@@ -15,7 +15,7 @@
     
     <meta http-equiv="Cache-Control" content="no-siteapp" />
 
-    <title>在 Windows 環境下安裝 Chocolatey | starspiritstorm</title>
+    <title>MSSQL - 多筆 row 字串連接 | starspiritstorm</title>
 
     <link rel="stylesheet" href="/zh-tw/css/meme.min.ca69ff12bb49f89398318b15570ebb80c80d876d09178510044408c4e50e9de1.css"/>
 
@@ -30,8 +30,7 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM&#43;Plex&#43;Serif:ital,wght@0,400;0,500;0,700;1,400;1,700&amp;family=Source&#43;Code&#43;Pro:ital,wght@0,400;0,700;1,400;1,700&amp;family=Source&#43;San&#43;Pro:ital,wght@0,400;0,500;0,700;1,400;1,700" media="print" onload="this.media='all'" />
         <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM&#43;Plex&#43;Serif:ital,wght@0,400;0,500;0,700;1,400;1,700&amp;family=Source&#43;Code&#43;Pro:ital,wght@0,400;0,700;1,400;1,700&amp;family=Source&#43;San&#43;Pro:ital,wght@0,400;0,500;0,700;1,400;1,700" /></noscript>
 
-    <meta name="author" content="starspiritstorm" /><meta name="description" content="為了安裝 Hugo，需要先安裝 Windows 用的套件管理軟體 Chocolatey
-本篇文章會介紹如何在 Windows 環境下安裝 Chocolatey
+    <meta name="author" content="starspiritstorm" /><meta name="description" content="多筆 row 字串連接。
 ……" />
 
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
@@ -51,22 +50,22 @@
     
 
     
-    <link rel="canonical" href="https://starspiritstorm.github.io/zh-tw/posts/install-chocolatey-in-windows/" />
+    <link rel="canonical" href="https://starspiritstorm.github.io/zh-tw/posts/mssql-string-concatenate/" />
     
 
 <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "BlogPosting",
-        "datePublished": "2021-12-21T14:53:55+08:00",
+        "datePublished": "2022-04-01T12:00:00+08:00",
         "dateModified": "2022-04-01T10:02:14+00:00",
-        "url": "https://starspiritstorm.github.io/zh-tw/posts/install-chocolatey-in-windows/",
-        "headline": "在 Windows 環境下安裝 Chocolatey",
-        "description": "為了安裝 Hugo，需要先安裝 Windows 用的套件管理軟體 Chocolatey\n本篇文章會介紹如何在 Windows 環境下安裝 Chocolatey\n……",
+        "url": "https://starspiritstorm.github.io/zh-tw/posts/mssql-string-concatenate/",
+        "headline": "MSSQL - 多筆 row 字串連接",
+        "description": "多筆 row 字串連接。\n……",
         "inLanguage" : "zh-tw",
         "articleSection": "posts",
-        "wordCount":  348 ,
-        "image": ["https://starspiritstorm.github.io/images/install_chocolately/fig1.Instruction_of_install_chocolately.png","https://starspiritstorm.github.io/images/install_chocolately/fig2.start_power_shell_with_admin.png","https://starspiritstorm.github.io/images/install_chocolately/fig3.check_ExecutionPolicy.png","https://starspiritstorm.github.io/images/install_chocolately/fig4.run_following_command.png","https://starspiritstorm.github.io/images/install_chocolately/fig5.Bypass.png","https://starspiritstorm.github.io/images/install_chocolately/fig6.AllSigned.png","https://starspiritstorm.github.io/images/install_chocolately/fig7.Chocolately_ready.png"],
+        "wordCount":  460 ,
+        "image": "https://starspiritstorm.github.io/icons/apple-touch-icon.png",
         "author": {
             "@type": "Person",
             "description": "YOLO",
@@ -94,25 +93,23 @@
 
     
 
-<meta name="twitter:card" content="summary_large_image" />
-
+<meta name="twitter:card" content="summary" />
 
 
     
 
 
 
-<meta property="og:title" content="在 Windows 環境下安裝 Chocolatey" />
-<meta property="og:description" content="為了安裝 Hugo，需要先安裝 Windows 用的套件管理軟體 Chocolatey
-本篇文章會介紹如何在 Windows 環境下安裝 Chocolatey
+<meta property="og:title" content="MSSQL - 多筆 row 字串連接" />
+<meta property="og:description" content="多筆 row 字串連接。
 ……" />
-<meta property="og:url" content="https://starspiritstorm.github.io/zh-tw/posts/install-chocolatey-in-windows/" />
+<meta property="og:url" content="https://starspiritstorm.github.io/zh-tw/posts/mssql-string-concatenate/" />
 <meta property="og:site_name" content="starspiritstorm" />
 <meta property="og:locale" content="zh-tw" />
             <meta property="og:locale:alternate" content="en" />
-        <meta property="og:image" content="https://starspiritstorm.github.io/images/install_chocolately/fig1.Instruction_of_install_chocolately.png" />
-<meta property="og:type" content="article" />
-    <meta property="article:published_time" content="2021-12-21T14:53:55&#43;08:00" />
+        <meta property="og:image" content="https://starspiritstorm.github.io/icons/apple-touch-icon.png" />
+    <meta property="og:type" content="article" />
+    <meta property="article:published_time" content="2022-04-01T12:00:00&#43;08:00" />
     <meta property="article:modified_time" content="2022-04-01T10:02:14&#43;00:00" />
     
     <meta property="article:section" content="posts" />
@@ -189,7 +186,7 @@
             
                 <ul id="langs">
                     
-                        <li><a rel="alternate" href="/en/posts/install-chocolatey-in-windows/" hreflang="en" lang="en">English</a></li>
+                        <li><a rel="alternate" href="/en/posts/mssql-string-concatenate/" hreflang="en" lang="en">English</a></li>
                     
                 </ul>
             
@@ -248,7 +245,7 @@
 
         <article class="content post h-entry" data-align="default" data-type="posts" data-toc-num="true">
 
-            <h1 class="post-title p-name">在 Windows 環境下安裝 Chocolatey</h1>
+            <h1 class="post-title p-name">MSSQL - 多筆 row 字串連接</h1>
 
             
 
@@ -262,7 +259,7 @@
 <div class="post-meta">
     
         
-        <time datetime="2021-12-21T14:53:55&#43;08:00" class="post-meta-item published dt-published"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="icon post-meta-icon"><path d="M148 288h-40c-6.6 0-12-5.4-12-12v-40c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12zm108-12v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm96 0v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm-96 96v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm-96 0v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm192 0v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm96-260v352c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V112c0-26.5 21.5-48 48-48h48V12c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v52h128V12c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v52h48c26.5 0 48 21.5 48 48zm-48 346V160H48v298c0 3.3 2.7 6 6 6h340c3.3 0 6-2.7 6-6z"/></svg>&nbsp;2021.12.21</time>
+        <time datetime="2022-04-01T12:00:00&#43;08:00" class="post-meta-item published dt-published"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="icon post-meta-icon"><path d="M148 288h-40c-6.6 0-12-5.4-12-12v-40c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12zm108-12v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm96 0v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm-96 96v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm-96 0v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm192 0v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm96-260v352c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V112c0-26.5 21.5-48 48-48h48V12c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v52h128V12c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v52h48c26.5 0 48 21.5 48 48zm-48 346V160H48v298c0 3.3 2.7 6 6 6h340c3.3 0 6-2.7 6-6z"/></svg>&nbsp;2022.4.1</time>
     
     
         
@@ -274,13 +271,13 @@
         
         
             
-                <span class="post-meta-item category"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon post-meta-icon"><path d="M464 128H272l-54.63-54.63c-6-6-14.14-9.37-22.63-9.37H48C21.49 64 0 85.49 0 112v288c0 26.51 21.49 48 48 48h416c26.51 0 48-21.49 48-48V176c0-26.51-21.49-48-48-48zm0 272H48V112h140.12l54.63 54.63c6 6 14.14 9.37 22.63 9.37H464v224z"/></svg>&nbsp;<a href="/zh-tw/categories/chocolatey/" class="category-link p-category">chocolatey</a></span>
+                <span class="post-meta-item category"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon post-meta-icon"><path d="M464 128H272l-54.63-54.63c-6-6-14.14-9.37-22.63-9.37H48C21.49 64 0 85.49 0 112v288c0 26.51 21.49 48 48 48h416c26.51 0 48-21.49 48-48V176c0-26.51-21.49-48-48-48zm0 272H48V112h140.12l54.63 54.63c6 6 14.14 9.37 22.63 9.37H464v224z"/></svg>&nbsp;<a href="/zh-tw/categories/mssql/" class="category-link p-category">MSSQL</a></span>
             
         
     
     
         
-        <span class="post-meta-item wordcount"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon post-meta-icon"><path d="M497.9 142.1l-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8L21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"/></svg>&nbsp;348</span>
+        <span class="post-meta-item wordcount"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon post-meta-icon"><path d="M497.9 142.1l-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8L21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"/></svg>&nbsp;460</span>
     
     
         
@@ -294,40 +291,118 @@
 
             <nav class="contents">
   <h2 id="contents" class="contents-title">目錄</h2><ol class="toc">
-    <li><a id="contents:安裝-chocolatey" href="#安裝-chocolatey">安裝 Chocolatey</a>
-      <ol>
-        <li><a id="contents:安裝步驟-1-用管理者權限開啟-windows-power-shell" href="#安裝步驟-1-用管理者權限開啟-windows-power-shell">安裝步驟 1. 用&quot;管理者權限&quot;開啟 Windows Power Shell</a></li>
-        <li><a id="contents:安裝步驟-2-執行-chocolatey-官網提供的指令" href="#安裝步驟-2-執行-chocolatey-官網提供的指令">安裝步驟 2. 執行 Chocolatey 官網提供的指令</a></li>
-      </ol>
-    </li>
+    <li><a id="contents:xml-path-方法連接-strings" href="#xml-path-方法連接-strings">XML PATH 方法連接 strings</a></li>
+    <li><a id="contents:coalesce-方法連接-strings" href="#coalesce-方法連接-strings">COALESCE 方法連接 strings</a></li>
+    <li><a id="contents:string_agg-方法連接-strings" href="#string_agg-方法連接-strings">STRING_AGG 方法連接 strings</a></li>
   </ol>
 </nav><div class="post-body e-content">
-                <p>為了安裝 Hugo，需要先安裝 Windows 用的套件管理軟體 Chocolatey</p>
-<p>本篇文章會介紹如何在 Windows 環境下安裝 Chocolatey</p>
-<h2 id="安裝-chocolatey"><a href="#安裝-chocolatey" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:安裝-chocolatey" class="headings">安裝 Chocolatey</a></h2>
-<p>首先，要安裝 Chocolatey 就是要去他的官方網站</p>
-<p><a href="https://chocolatey.org/" target="_blank" rel="noopener">chocolatey 官方網站</a></p>
-<p><a href="https://chocolatey.org/install" target="_blank" rel="noopener">chocolatey 安裝頁面</a></p>
-<p><img src="/images/install_chocolately/fig1.Instruction_of_install_chocolately.png" alt="fig1"><span class="caption">◎ Fig1. Chocolatey 的官方網頁安裝步驟</span></p>
-<h3 id="安裝步驟-1-用管理者權限開啟-windows-power-shell"><a href="#安裝步驟-1-用管理者權限開啟-windows-power-shell" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:安裝步驟-1-用管理者權限開啟-windows-power-shell" class="headings">安裝步驟 1. 用&quot;管理者權限&quot;開啟 Windows Power Shell</a></h3>
-<p>安裝頁面的指令需要用 Windows Power Shell  執行，Windows Power Shell 記得要用&quot;管理者權限&quot;開啟。</p>
-<p><img src="/images/install_chocolately/fig2.start_power_shell_with_admin.png" alt="fig2"><span class="caption">◎ Fig2. 右鍵點選 Windows Power Shell 並用管理者權限開啟 </span></p>
-<h3 id="安裝步驟-2-執行-chocolatey-官網提供的指令"><a href="#安裝步驟-2-執行-chocolatey-官網提供的指令" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:安裝步驟-2-執行-chocolatey-官網提供的指令" class="headings">安裝步驟 2. 執行 Chocolatey 官網提供的指令</a></h3>
-<p>根據 Chocolatey 的安裝指示，在安裝 Chocolatey 之前，最好先去 MSDN 確定一下你要的權限 level</p>
-<p>檢查目前 Power Shell 的設定可以用這行指令</p>
-<pre><code>Get-ExecutionPolicy -list
+                <p>多筆 row 字串連接。</p>
+<p>我是用下面的關鍵字去 google 的</p>
+<pre><code>SQL string Concatenate 
 </code></pre>
-<p><img src="/images/install_chocolately/fig3.check_ExecutionPolicy.png" alt="fig3"><span class="caption">◎ Fig3. 檢查權限</span></p>
-<p>接下來就跑 &ldquo;run following command&rdquo; 的指令</p>
-<p><img src="/images/install_chocolately/fig4.run_following_command.png" alt="fig4"></p>
-<pre><code>Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
+<p>3種<a href="https://www.mytecbits.com/microsoft/sql-server/concatenate-multiple-rows-into-single-string" target="_blank" rel="noopener">方法</a></p>
+<ol>
+<li>
+<p>for xml path</p>
+</li>
+<li>
+<p>COALESCE</p>
+</li>
+<li>
+<p>STRING_AGG</p>
+</li>
+</ol>
+<p>用 for xml path 遇到特殊字元的處理<a href="https://blogs.lobsterpot.com.au/2010/04/15/handling-special-characters-with-for-xml-path/" target="_blank" rel="noopener">方式</a>。</p>
+<p>中文的 for xml path 的參考，<a href="https://coolmandiary.blogspot.com/2020/11/t-sql12for-xml-path-stuffrowrow.html" target="_blank" rel="noopener">如何透過for xml path 搭配STUFF將多ROW資料合併同一ROW</a>，
+以及<a href="https://dotblogs.com.tw/supershowwei/2016/01/26/145353" target="_blank" rel="noopener">食譜好菜 SQL Server 使用「FOR XML」語法做欄位合併</a>。</p>
+<p>還有 performance 的比較</p>
+<p><a href="https://blog.darkthread.net/blog/col-merge-benchmark" target="_blank" rel="noopener">for xml path vs CTE</a></p>
+<p>for xml path vs STRING_AGG</p>
+<p><a href="https://sqlperformance.com/2016/12/sql-performance/sql-server-v-next-string_agg-performance" target="_blank" rel="noopener">sql-server-v-next-string_agg-performance</a></p>
+<p><a href="https://sqlperformance.com/2017/01/sql-performance/sql-server-v-next-string_agg-performance-part-2" target="_blank" rel="noopener">sql-server-v-next-string_agg-performance</a></p>
+<p>結論，MSSQL 2017 之後版本的人就乖乖用 STRING_AGG 吧..</p>
+<h2 id="xml-path-方法連接-strings"><a href="#xml-path-方法連接-strings" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:xml-path-方法連接-strings" class="headings">XML PATH 方法連接 strings</a></h2>
+<pre><code>DECLARE @temp_origin TABLE
+(
+	ID INT
+  , input_date DATETIME
+  , name VARCHAR(50)
+) 
+-- a sample temp table
+INSERT INTO @temp_origin
+SELECT 1, '2021-05-05', 'Adam%'
+ UNION
+SELECT 1, '2021-05-05', 'Gray&amp;'
+ UNION
+SELECT 1, '2021-05-05', 'Jacy'
+ UNION
+SELECT 2, '2021-05-08', 'Henry'
+ UNION
+SELECT 2, '2021-05-08', 'Alice'
+ UNION
+SELECT 3, '2021-05-15', 'Ben'
+
+
+
+-- xml path method
+SELECT DISTINCT 
+	   temp.ID
+	 , input_date
+	 , inner_concatenate_name
+  FROM @temp_origin AS temp
+ OUTER APPLY (SELECT DISTINCT ID 
+		   , STUFF((SELECT ',' + name
+				  FROM @temp_origin AS inner_list
+				 WHERE inner_list.ID = outer_list.ID 
+				   for xml path(''), root('MyString'), type
+				).value('/MyString[1]','varchar(max)')
+			  ,1,1,'') AS inner_concatenate_name
+		   FROM @temp_origin AS outer_list
+		 ) AS T
+ WHERE temp.ID = T.ID
+
+
+/*
+-- 如果不明白 xml path 怎麼運作的，可以把這塊註解拿掉看一下OUTPUT
+
+SELECT DISTINCT ID 
+	 , STUFF((SELECT ',' + name
+				FROM @temp_origin AS inner_list
+			   WHERE inner_list.ID = outer_list.ID 
+			   for xml path(''), root('MyString'), type
+			 ).value('/MyString[1]','varchar(max)')
+			,1,1,'') AS inner_concatenate_name
+  FROM @temp_origin AS outer_list
+
+*/
 </code></pre>
-<p>注意它裡面有寫 Bypass，所以你的 Set-ExecutionPolicy 會被設定成 Bypass，-Scope Process 這段是表示設定只套用於 Process</p>
-<p>用 AllSigned 會有一堆詢問，看每個人的習慣自行決定要用 Bypass 還是 AllSigned，我比較懶所以就直接用 Bypass 了</p>
-<p><img src="/images/install_chocolately/fig5.Bypass.png" alt="fig5"><span class="caption">◎ Fig5. Bypass</span></p>
-<p><img src="/images/install_chocolately/fig6.AllSigned.png" alt="fig6"><span class="caption">◎ Fig6. AllSigned</span></p>
-<p>最後裝完以後就會看到 Chocolatey (choco.exe) is now ready</p>
-<p><img src="/images/install_chocolately/fig7.Chocolately_ready.png" alt="fig7"></p>
+<blockquote>
+<p>NOTE: 這塊是在處理 &ldquo;&amp;&rdquo; 之類的特殊字元。</p>
+<pre><code>                         , root('MyString'), type
+).value('/MyString[1]','varchar(max)')
+</code></pre>
+<p>如果你沒加這塊，&quot;&amp;&quot; 在 XML path 轉換過後會變成 &ldquo;&amp;&rdquo;</p>
+</blockquote>
+<h2 id="coalesce-方法連接-strings"><a href="#coalesce-方法連接-strings" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:coalesce-方法連接-strings" class="headings">COALESCE 方法連接 strings</a></h2>
+<pre><code>/*
+-- COALESCE 方法沒辦法一個 SELECT 搞定，所以就不用了
+DECLARE @val Varchar(MAX); 
+
+SELECT @val = COALESCE(@val + ', ' + name, name) 
+  FROM @temp_origin 
+  
+SELECT @val;
+*/
+</code></pre>
+<h2 id="string_agg-方法連接-strings"><a href="#string_agg-方法連接-strings" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:string_agg-方法連接-strings" class="headings">STRING_AGG 方法連接 strings</a></h2>
+<pre><code>-- STRING_AGG method
+SELECT ID
+	 , input_date
+	 , STRING_AGG( ISNULL(name, ' '), ',') As name 
+  From @temp_origin
+ GROUP BY ID, input_date
+</code></pre>
+<p><a href="https://dbfiddle.uk/?rdbms=sqlserver_2017&amp;fiddle=bfc3fb737203a5b7e23f0aaa9bf4423b" target="_blank" rel="noopener">測試結果</a></p>
             </div>
 
             
@@ -340,7 +415,7 @@
                 
                 
                 
-                <li class="copyright-item link"><span class="copyright-item-text">連結</span>：<a href="/zh-tw/posts/install-chocolatey-in-windows/" target="_blank" rel="noopener">https://starspiritstorm.github.io/zh-tw/zh-tw/posts/install-chocolatey-in-windows/</a></li>
+                <li class="copyright-item link"><span class="copyright-item-text">連結</span>：<a href="/zh-tw/posts/mssql-string-concatenate/" target="_blank" rel="noopener">https://starspiritstorm.github.io/zh-tw/zh-tw/posts/mssql-string-concatenate/</a></li>
             
             <li class="copyright-item license"><span class="copyright-item-text">許可</span>：<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a></li>
             
@@ -374,28 +449,28 @@
             
                 <div class="share-item twitter">
                     
-                    <a href="https://twitter.com/share?url=https://starspiritstorm.github.io/zh-tw/posts/install-chocolatey-in-windows/&amp;text=%e5%9c%a8%20Windows%20%e7%92%b0%e5%a2%83%e4%b8%8b%e5%ae%89%e8%a3%9d%20Chocolatey&amp;hashtags=windows,chocolatey,&amp;via=%25!s%28%3cnil%3e%29" title="分享到「Twitter」" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon twitter-icon"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg></a>
+                    <a href="https://twitter.com/share?url=https://starspiritstorm.github.io/zh-tw/posts/mssql-string-concatenate/&amp;text=MSSQL%20-%20%e5%a4%9a%e7%ad%86%20row%20%e5%ad%97%e4%b8%b2%e9%80%a3%e6%8e%a5&amp;hashtags=MSSQL,Function,MSSQL2008,MSSQL2017,Concatenatestring,&amp;via=%25!s%28%3cnil%3e%29" title="分享到「Twitter」" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon twitter-icon"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg></a>
                 </div>
             
 
             
                 <div class="share-item facebook">
                     
-                    <a href="https://www.facebook.com/sharer/sharer.php?u=https://starspiritstorm.github.io/zh-tw/posts/install-chocolatey-in-windows/&amp;hashtag=%23windows" title="分享到「Facebook」" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon facebook-icon"><path d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z"/></svg></a>
+                    <a href="https://www.facebook.com/sharer/sharer.php?u=https://starspiritstorm.github.io/zh-tw/posts/mssql-string-concatenate/&amp;hashtag=%23MSSQL" title="分享到「Facebook」" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon facebook-icon"><path d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z"/></svg></a>
                 </div>
             
 
             
                 <div class="share-item linkedin">
                     
-                    <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://starspiritstorm.github.io/zh-tw/posts/install-chocolatey-in-windows/&amp;title=%e5%9c%a8%20Windows%20%e7%92%b0%e5%a2%83%e4%b8%8b%e5%ae%89%e8%a3%9d%20Chocolatey&amp;summary=%e7%82%ba%e4%ba%86%e5%ae%89%e8%a3%9d%20Hugo%ef%bc%8c%e9%9c%80%e8%a6%81%e5%85%88%e5%ae%89%e8%a3%9d%20Windows%20%e7%94%a8%e7%9a%84%e5%a5%97%e4%bb%b6%e7%ae%a1%e7%90%86%e8%bb%9f%e9%ab%94%20Chocolatey%0a%e6%9c%ac%e7%af%87%e6%96%87%e7%ab%a0%e6%9c%83%e4%bb%8b%e7%b4%b9%e5%a6%82%e4%bd%95%e5%9c%a8%20Windows%20%e7%92%b0%e5%a2%83%e4%b8%8b%e5%ae%89%e8%a3%9d%20Chocolatey%0a%e2%80%a6%e2%80%a6&amp;source=starspiritstorm" title="分享到「LinkedIn」" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="icon linkedin-icon"><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg></a>
+                    <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://starspiritstorm.github.io/zh-tw/posts/mssql-string-concatenate/&amp;title=MSSQL%20-%20%e5%a4%9a%e7%ad%86%20row%20%e5%ad%97%e4%b8%b2%e9%80%a3%e6%8e%a5&amp;summary=%e5%a4%9a%e7%ad%86%20row%20%e5%ad%97%e4%b8%b2%e9%80%a3%e6%8e%a5%e3%80%82%0a%e2%80%a6%e2%80%a6&amp;source=starspiritstorm" title="分享到「LinkedIn」" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="icon linkedin-icon"><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg></a>
                 </div>
             
 
             
                 <div class="share-item telegram">
                     
-                    <a href="https://t.me/share/url?url=https://starspiritstorm.github.io/zh-tw/posts/install-chocolatey-in-windows/&amp;text=%e5%9c%a8%20Windows%20%e7%92%b0%e5%a2%83%e4%b8%8b%e5%ae%89%e8%a3%9d%20Chocolatey" title="分享到「Telegram」" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" class="icon telegram-icon"><path d="M248 8C111 8 0 119 0 256s111 248 248 248 248-111 248-248S385 8 248 8zm121.8 169.9l-40.7 191.8c-3 13.6-11.1 16.9-22.4 10.5l-62-45.7-29.9 28.8c-3.3 3.3-6.1 6.1-12.5 6.1l4.4-63.1 114.9-103.8c5-4.4-1.1-6.9-7.7-2.5l-142 89.4-61.2-19.1c-13.3-4.2-13.6-13.3 2.8-19.7l239.1-92.2c11.1-4 20.8 2.7 17.2 19.5z"/></svg></a>
+                    <a href="https://t.me/share/url?url=https://starspiritstorm.github.io/zh-tw/posts/mssql-string-concatenate/&amp;text=MSSQL%20-%20%e5%a4%9a%e7%ad%86%20row%20%e5%ad%97%e4%b8%b2%e9%80%a3%e6%8e%a5" title="分享到「Telegram」" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" class="icon telegram-icon"><path d="M248 8C111 8 0 119 0 256s111 248 248 248 248-111 248-248S385 8 248 8zm121.8 169.9l-40.7 191.8c-3 13.6-11.1 16.9-22.4 10.5l-62-45.7-29.9 28.8c-3.3 3.3-6.1 6.1-12.5 6.1l4.4-63.1 114.9-103.8c5-4.4-1.1-6.9-7.7-2.5l-142 89.4-61.2-19.1c-13.3-4.2-13.6-13.3 2.8-19.7l239.1-92.2c11.1-4 20.8 2.7 17.2 19.5z"/></svg></a>
                 </div>
             
 
@@ -417,7 +492,7 @@
     var typeNumber = 0;
     var errorCorrectionLevel = 'L';
     var qr = qrcode(typeNumber, errorCorrectionLevel);
-    qr.addData('https:\/\/starspiritstorm.github.io\/zh-tw\/posts\/install-chocolatey-in-windows\/');
+    qr.addData('https:\/\/starspiritstorm.github.io\/zh-tw\/posts\/mssql-string-concatenate\/');
     qr.make();
     document.getElementById('qrcode-img').innerHTML = qr.createImgTag();
 </script>
@@ -440,11 +515,11 @@
             <ul class="related-list">
                 
                     <li class="related-item">
-                        <a href="/zh-tw/posts/uninstall-chocolatey-in-windows/" class="related-link">在 Windows 環境下移除 Chocolatey</a>
+                        <a href="/zh-tw/posts/mssql-split-comma-separated-string-into-rows/" class="related-link">MSSQL - 拆分分隔符號變成多筆row</a>
                     </li>
                 
                     <li class="related-item">
-                        <a href="/zh-tw/posts/install-hugo-in-windows/" class="related-link">在 Windows 環境下安裝 Hugo</a>
+                        <a href="/zh-tw/posts/mssql-get-continuous-sequenced-start-of-month-and-end-of-month-from-a-date-range/" class="related-link">MSSQL - 給定起始&amp;結束日期，取得連續的每月月初跟每月月尾</a>
                     </li>
                 
             </ul>
@@ -462,7 +537,7 @@
                 
                 
                     
-                    <a href="/zh-tw/tags/windows/" rel="tag" class="post-tags-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon tag-icon"><path d="M0 252.118V48C0 21.49 21.49 0 48 0h204.118a48 48 0 0 1 33.941 14.059l211.882 211.882c18.745 18.745 18.745 49.137 0 67.882L293.823 497.941c-18.745 18.745-49.137 18.745-67.882 0L14.059 286.059A48 48 0 0 1 0 252.118zM112 64c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48z"/></svg>windows</a>
+                    <a href="/zh-tw/tags/mssql/" rel="tag" class="post-tags-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon tag-icon"><path d="M0 252.118V48C0 21.49 21.49 0 48 0h204.118a48 48 0 0 1 33.941 14.059l211.882 211.882c18.745 18.745 18.745 49.137 0 67.882L293.823 497.941c-18.745 18.745-49.137 18.745-67.882 0L14.059 286.059A48 48 0 0 1 0 252.118zM112 64c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48z"/></svg>MSSQL</a>
                 
             
                 
@@ -470,7 +545,31 @@
                 
                 
                     
-                    <a href="/zh-tw/tags/chocolatey/" rel="tag" class="post-tags-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon tag-icon"><path d="M0 252.118V48C0 21.49 21.49 0 48 0h204.118a48 48 0 0 1 33.941 14.059l211.882 211.882c18.745 18.745 18.745 49.137 0 67.882L293.823 497.941c-18.745 18.745-49.137 18.745-67.882 0L14.059 286.059A48 48 0 0 1 0 252.118zM112 64c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48z"/></svg>chocolatey</a>
+                    <a href="/zh-tw/tags/function/" rel="tag" class="post-tags-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon tag-icon"><path d="M0 252.118V48C0 21.49 21.49 0 48 0h204.118a48 48 0 0 1 33.941 14.059l211.882 211.882c18.745 18.745 18.745 49.137 0 67.882L293.823 497.941c-18.745 18.745-49.137 18.745-67.882 0L14.059 286.059A48 48 0 0 1 0 252.118zM112 64c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48z"/></svg>Function</a>
+                
+            
+                
+                
+                
+                
+                    
+                    <a href="/zh-tw/tags/mssql-2008/" rel="tag" class="post-tags-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon tag-icon"><path d="M0 252.118V48C0 21.49 21.49 0 48 0h204.118a48 48 0 0 1 33.941 14.059l211.882 211.882c18.745 18.745 18.745 49.137 0 67.882L293.823 497.941c-18.745 18.745-49.137 18.745-67.882 0L14.059 286.059A48 48 0 0 1 0 252.118zM112 64c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48z"/></svg>MSSQL 2008</a>
+                
+            
+                
+                
+                
+                
+                    
+                    <a href="/zh-tw/tags/mssql-2017/" rel="tag" class="post-tags-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon tag-icon"><path d="M0 252.118V48C0 21.49 21.49 0 48 0h204.118a48 48 0 0 1 33.941 14.059l211.882 211.882c18.745 18.745 18.745 49.137 0 67.882L293.823 497.941c-18.745 18.745-49.137 18.745-67.882 0L14.059 286.059A48 48 0 0 1 0 252.118zM112 64c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48z"/></svg>MSSQL 2017</a>
+                
+            
+                
+                
+                
+                
+                    
+                    <a href="/zh-tw/tags/concatenate-string/" rel="tag" class="post-tags-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon tag-icon"><path d="M0 252.118V48C0 21.49 21.49 0 48 0h204.118a48 48 0 0 1 33.941 14.059l211.882 211.882c18.745 18.745 18.745 49.137 0 67.882L293.823 497.941c-18.745 18.745-49.137 18.745-67.882 0L14.059 286.059A48 48 0 0 1 0 252.118zM112 64c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48z"/></svg>Concatenate string</a>
                 
             
         </div>
@@ -494,13 +593,9 @@
     
         <ul class="post-nav">
             
-                <li class="post-nav-prev">
-                    <a href="/zh-tw/posts/uninstall-chocolatey-in-windows/" rel="prev">&lt; 在 Windows 環境下移除 Chocolatey</a>
-                </li>
-            
             
                 <li class="post-nav-next">
-                    <a href="/zh-tw/posts/auto-post-with-github-action/" rel="next">本篇文章是由 GitHub Action 自動推到 GitHub Pages 的測試文章 &gt;</a>
+                    <a href="/zh-tw/posts/mssql-split-comma-separated-string-into-rows/" rel="next">MSSQL - 拆分分隔符號變成多筆row &gt;</a>
                 </li>
             
         </ul>
