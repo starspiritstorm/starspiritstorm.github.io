@@ -23,10 +23,157 @@
         
             <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</copyright>
         
-        <lastBuildDate>Thu, 31 Mar 2022 06:48:46 &#43;0000</lastBuildDate>
+        <lastBuildDate>Fri, 01 Apr 2022 09:09:55 &#43;0000</lastBuildDate>
         
             <atom:link rel="self" type="application/rss&#43;xml" href="https://starspiritstorm.github.io/en/rss.xml" />
         
+        
+            <item>
+                <title>MSSQL - Split comma-separated string into rows</title>
+                <link>https://starspiritstorm.github.io/en/posts/mssql-split-comma-separated-string-into-rows/</link>
+                <guid isPermaLink="true">https://starspiritstorm.github.io/en/posts/mssql-split-comma-separated-string-into-rows/</guid>
+                <pubDate>Fri, 01 Apr 2022 12:00:00 &#43;0800</pubDate>
+                
+                    <author>starspiritstorm@gmail.com (starspiritstorm)</author>
+                
+                <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</copyright>
+                
+                    <description>&lt;p&gt;Split comma-separated string into rows.&lt;/p&gt;
+&lt;p&gt;I used these key words searching it from google.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sql separate string by comma into rows
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Find first &lt;a href=&#34;https://stackoverflow.com/questions/5493510/turning-a-comma-separated-string-into-individual-rows&#34;&gt;stackoverflow&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;There are two ways to accomplish the job.&lt;/p&gt;
+&lt;p&gt;One method is MSSQL 2016 before, CTE recursion method&lt;/p&gt;
+&lt;p&gt;One method is MSSQL 2016 after, there&amp;rsquo;s a build-in function, STRING_SPLIT&lt;/p&gt;
+&lt;p&gt;And &lt;a href=&#34;http://sqlperformance.com/2016/03/t-sql-queries/string-split&#34;&gt;performance&lt;/a&gt; comparison.&lt;/p&gt;
+&lt;p&gt;Conclusion, if you are using MSSQL 2016 later version, just use the STRING_SPLIT.&lt;/p&gt;
+&lt;h2 id=&#34;cte-recursion-method-to-split-strings&#34;&gt;CTE recursion method to split strings&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;-- a sample temp table
+DECLARE @temp_origin TABLE
+(
+	ID INT
+  , input_date DATETIME
+  , name VARCHAR(50)
+)
+
+INSERT INTO @temp_origin
+SELECT 1, &#39;2021-05-05&#39;, &#39;Adam,Gray,Jacy&#39;
+ UNION
+SELECT 2, &#39;2021-05-08&#39;, &#39;Henry,Alice&#39;
+ UNION
+SELECT 3, &#39;2021-05-15&#39;, &#39;Ben&#39;
+
+
+DECLARE @split_character VARCHAR(10)
+	SET @split_character = &#39;,&#39;
+
+
+
+;WITH split_temp(ID, input_date, splitted_name, step_by_step_to_split, origin_concatenated_name) AS
+(
+	SELECT ID
+		 , input_date
+		 , CAST ( LEFT(name, CHARINDEX(@split_character, name + @split_character) - 1) AS VARCHAR(200)) 
+		 , STUFF(name, 1, CHARINDEX(@split_character, name + @split_character), &#39;&#39;)                     
+		 , name
+	  FROM @temp_origin
+	  
+		-- CTE recursion to split name column
+	 UNION all
+	SELECT ID
+		 , input_date
+		 , CAST ( LEFT(step_by_step_to_split, CHARINDEX(@split_character, step_by_step_to_split + @split_character) - 1) AS VARCHAR(200))
+		 , STUFF(step_by_step_to_split, 1, CHARINDEX(@split_character, step_by_step_to_split + @split_character), &#39;&#39;)
+		 , origin_concatenated_name
+	  FROM split_temp
+	 WHERE step_by_step_to_split &amp;gt; &#39;&#39;
+)
+SELECT ID 
+	 , input_date 
+	 , splitted_name
+	 , step_by_step_to_split
+	 , origin_concatenated_name
+  FROM split_temp
+ ORDER BY ID
+-- OPTION (maxrecursion 0)
+
+-- normally CTE recursion is limited to 100. If you know you have very long strings, uncomment the option
+
+/*
+-- for someone who don&#39;t understand the CHARINDEX, LEFT, STUFF function work, you can uncomment this block
+
+	SELECT ID
+		 , input_date
+		 , CHARINDEX(@split_character, name + @split_character) - 1
+		 , CAST ( LEFT(name, CHARINDEX(@split_character, name + @split_character) - 1) AS VARCHAR(200))	-- finding the first @split_character and using LEFT to take out the &amp;quot;first string&amp;quot;
+		 , CHARINDEX(@split_character, name + @split_character)											  
+		 , STUFF(name, 1, CHARINDEX(@split_character, name + @split_character), &#39;&#39;)						-- using STUFF to remove the &amp;quot;first string&amp;quot; with @split_character
+		 , name
+	  FROM @temp_origin
+*/
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;string_split-method-to-split-strings&#34;&gt;STRING_SPLIT method to split strings&lt;/h2&gt;
+&lt;p&gt;If you are using the version after MSSQL 2016, you can just using the STRING_SPLIT function&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;SELECT ID
+	 , input_date
+	 , cs.Value --SplitData
+  FROM @temp_origin
+ CROSS APPLY STRING_SPLIT (name, @split_character) cs
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;a href=&#34;https://dbfiddle.uk/?rdbms=sqlserver_2017&amp;amp;fiddle=f9f488d3f8e9dd1ffd214fe07e92cad3&#34;&gt;Here&amp;rsquo;s the testing result&lt;/a&gt;&lt;/p&gt;</description>
+                
+                
+                
+                
+                
+                    
+                        
+                            
+                                
+                                
+                                
+                                    <category domain="https://starspiritstorm.github.io/en/categories/mssql/">MSSQL</category>
+                                
+                            
+                        
+                    
+                        
+                            
+                                
+                                
+                                
+                                    <category domain="https://starspiritstorm.github.io/en/tags/mssql/">MSSQL</category>
+                                
+                            
+                                
+                                
+                                
+                                    <category domain="https://starspiritstorm.github.io/en/tags/function/">Function</category>
+                                
+                            
+                                
+                                
+                                
+                                    <category domain="https://starspiritstorm.github.io/en/tags/mssql-2008/">MSSQL 2008</category>
+                                
+                            
+                                
+                                
+                                
+                                    <category domain="https://starspiritstorm.github.io/en/tags/mssql-2017/">MSSQL 2017</category>
+                                
+                            
+                                
+                                
+                                
+                                    <category domain="https://starspiritstorm.github.io/en/tags/split-string/">Split string</category>
+                                
+                            
+                        
+                    
+                
+            </item>
         
             <item>
                 <title>MSSQL - Get continuous sequenced start of month and end of month from a date range</title>
